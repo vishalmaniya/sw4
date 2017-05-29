@@ -1,0 +1,23 @@
+{
+    "name": "tecksky/Affiliate",
+    "description": "this is Affiliate Program.",
+    "type": "metapackage",
+    "authors": [
+        {
+            "name": "nikky.kajavadara",
+            "email": "niky.kajavadara@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "psr-4": {
+            "App\\": "app/",
+            "Tecksky\\Affiliate\\": "packages/tecksky/Affiliate/src",
+            "Tecksky\\Affiliate\\Http\\Controllers\\": "src/Http/Controllers/"
+        }
+    }
+}

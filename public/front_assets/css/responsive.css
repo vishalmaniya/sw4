@@ -1,0 +1,196 @@
+.btn {
+    display: none;
+}
+.btn a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+#menu-icon1 {
+    display: none;
+    width: 6%;
+    float: right;
+    margin-top: 8px;
+}
+#menu-icon1 img {
+    width: 100%;
+}
+#menu-icon2 img {
+    width: 100%;
+}
+#menu-icon2 {
+    display: none;
+    width: 6%;
+    float: right;
+    position: relative;
+    top: 15px;
+    right: 20px;
+}
+#lesson_video_272{
+}
+
+@media screen and (max-width: 1200px) and (min-width: 110px){
+
+}
+
+@media screen and (max-width: 2500px) and (min-width: 721px){
+    #topnav ul {display: block !important;}
+    #menu-icon1 {display: none !important;}
+    #menu-icon2 {display: none !important;}
+    #menu-icon22 {display: block !important;}
+}
+@media screen and (max-width: 1200px) and (min-width: 110px){
+    body {min-width:110px;padding-bottom: 30px;}
+    #wrapper {width: 90%;}
+    #header {background-size: 100%;}
+    #content {width: 100%;background-size: 100%;}
+    #footer {width: 100%;background-size: 100%;}
+    #content .prevnext {padding-top: 20px;margin: 40px 0 14px;width: 85%;}
+    #topnav {padding: 2px 0;width: 100%;min-width: 110px;}
+    #topnav .inner {width: 80%; margin: 0 auto;overflow: hidden;}
+    .rightcol {float: inherit;width: 60%; margin-right: -7px;padding: 40px 40px 30px; min-height: auto;}
+    #content .content_inner {width: 90%;margin: 0 8px;}
+    #topnav .logo {margin-top: 5px;margin-left: 0;font-weight: 200;}
+    .user img {width: 100%;}
+    #header .user .profile {height: 51px;width: 51px;}
+    #header .user {width: 254px;height: 64px;padding: 9px 0 0 58px;}
+    #header .user .points {font-size: 14px;letter-spacing: .10em;}
+}
+@media screen and (max-width: 1160px) and (min-width: 110px){
+    #header .user {width: 224px;height: 64px;padding: 9px 0 0 58px;}
+}
+@media screen and (max-width: 1080px) and (min-width: 110px){
+    #header .user {width: 210px;height: 58px;padding: 9px 0 0 58px;}
+    .rightcol {width: 50%;}
+}
+@media screen and (max-width: 980px) and (min-width: 110px){
+    #header .user .profile {height: 41px;width: 41px;}
+    #content .prevnext {padding-top: 20px;margin: 0px 0 0px;width: 95%;}
+    #header .user {width: 190px;height: 54px;padding: 4px 0 0 48px;}
+    #header .user .points {font-size: 12px;letter-spacing: .10em;}
+    #header .breadcrumbs {left: 18px;bottom: 12px;}
+}
+
+@media screen and (max-width: 880px) and (min-width: 110px){
+    #header .title {color: #000;font-size: 46px;text-shadow: 1px 1px 1px #ccc;text-align: center;}
+    #content {padding: 180px 0px 30px 0px;}
+    #header {height: 8px;}
+    .being {position: relative;top: 0px;left: 0px;background: #1D6038;height: 90px;}
+    #header .title {padding: 16px 0;}
+    #header .user {width: 91%;height: 74px;padding: 4px 0 0 48px;}
+    .btn {display: block;text-align: center;background: #138446;padding: 10px 10px;border-radius: 3px;margin-left: 50px;cursor: pointer;}
+    .btn:hover{ background-color: #1D6038;}
+    .leftnav {display: none;}
+    #content .content_inner {background:transparent;}
+    .leftcol {width: 100%;}
+    .rightcol {width: 100%;}
+    #content .prevnext {text-align: left;}
+    #content .leftnav li a, #content .leftnav li span {background-size: 100%;}
+}
+
+
+
+@media screen and (max-width: 720px) and (min-width: 110px){
+    #topnav ul {display: none;}
+    #menu-icon1 {display: block;}
+    #menu-icon2 {display: block;}
+    #menu-icon22 {display: block;}
+    #header .breadcrumbs {
+        left: 18px;
+        bottom: 12px;
+        display: block;
+    }
+    #menu-icon2 img {
+        width: 0%;
+    }
+    #header .user {width: 91%;height: 52px;padding: 4px 0 0 48px;}
+    /*.being {position: relative;top: 0;left: 0px;background: #1D6038;height: 66px;}*/
+    #header .title {padding: 16px 0;}
+    #content {padding: 152px 0px 30px 0px;margin-top: -99px;}
+    #header .user .profile {height: 51px;width: 51px;margin: 6px;}
+    #header .user {width: 50%;height: 52px;padding: 5px 0px 0 68px;position: inherit;padding-top: 15px;}
+    #header .title {font-size: 34px;}
+    #topnav ul {float: none;list-style: none;margin: 9px 0;background: #1D6038;padding: 0;}
+    #topnav ul li {float: none;padding: 0;border-left: 1px solid #1D6038;}
+    #topnav .logo {float: none;}
+    #topnav li:hover {background: #fff;}
+
+    #content {
+        padding: 242px 0px 30px 0px;
+        margin-top: -86px;
+    }
+    #header .breadcrumbs a {
+        color: #fff;
+        text-decoration: none;
+        float: right;
+        width: 95%;
+    }
+    #header .breadcrumbs {
+        left: 0;
+        bottom: 12px;
+        display: block;
+    }
+    .being {
+        position: relative;
+        top: 0;
+        left: 0px;
+        background: #1D6038;
+        height: 146px;
+    }
+    .rightcol { padding: 40px 20px 30px;}
+
+
+}
+@media screen and (max-width: 620px) and (min-width: 110px){
+    #wrapper {width: 80%;}
+    #header {height: 6px;}
+    /*#content {margin-top: -95px;}*/
+    #content {margin-top: -88px;}
+    #header .breadcrumbs a { width: 94%;}
+    body.course h1, body.usersright h1 {font-size: 30px;margin: 0 20px 20px 0;}
+}
+
+@media screen and (max-width: 560px) and (min-width: 110px){
+    #header .title {font-size: 26px;}
+    #content {margin-top: -93px;}
+    #content {margin-top: -88px;}
+}
+
+
+@media screen and (max-width: 520px) and (min-width: 110px){
+    #content .button_green_prev {padding: 8px 12px;}
+    #content .button_green2_next {padding: 8px 12px;}
+    .rightcol {padding: 20px 10px 0px;}
+    #header .breadcrumbs a {width: 92%;}
+}
+
+@media screen and (max-width: 480px) and (min-width: 110px){
+    #content {margin-top: -92px;}
+    #header {height: 4px;}
+    #header .user .points {font-size: 10px;letter-spacing: .10em;}
+    body.course h1, body.usersright h1 { font-size: 20px; line-height: 40px;margin: 0 50px 20px 0;}
+    .btn {margin-left: 20px;}#header .title {font-size: 19px;}
+    #header .title {font-size: 19px;padding: 0;}
+    #content {margin-top: -58px;padding: 212px 0px 30px 0px;}
+}
+
+@media screen and (max-width: 420px) and (min-width: 110px){
+    #lesson_video_272 { height: 0;}
+    #header .breadcrumbs a { width: 90%;}
+    #header .breadcrumbs a { width: 90%;}
+}
+
+@media screen and (max-width: 380px) and (min-width: 110px){
+    #content .button_green_prev {padding: 8px 0;width: 100%;margin-bottom: 10px;}
+    #content .button_green2_next {padding: 8px 0;width: 100%;}
+
+} 
+
+@media screen and (max-width: 342px) and (min-width: 110px){  
+    #header .title {font-size: 16px;}
+    .btn {margin-left: 12px;}
+    #header .user .points {font-size: 9px;letter-spacing: 0px;}
+    #header .breadcrumbs a {
+        width: 89%;
+    }
+}

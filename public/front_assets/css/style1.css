@@ -1,0 +1,2291 @@
+.b1 img {
+  width: 3%;
+  margin-top: 4px;
+  float: right;
+  cursor: pointer;
+}
+.b1 {
+  display: none;
+  width: 100%;
+  max-width: 100%;
+}
+#topnav ul {
+  float: right;
+  list-style: none;
+  margin: 9px 0;
+  color: #fff;
+  min-width: 110px;
+  display: block;
+}
+#topnav {
+  background: #000;
+  padding: 2px 0;
+  width: 100%;
+  min-width: auto;
+}
+.section { padding: 25.5px 50px; }
+.sectionbg { border-top: 1px solid #e2e2e2; }
+.sectionbg form { width: 500px; display: block; margin: 10px auto 0; }
+.reminder { padding: 30px;}
+.reminder { border-top: 1px solid #e2e2e2; }
+
+
+.reminder-again {padding: 30px;background: url(../images/bg-sectionbg.gif) 0 0 repeat-x;
+}
+
+.supportt .sectionbg form {width: 100%;display: block;margin: 10px auto 0;}
+
+.update_profile_user .section {
+  padding: 26px 50px;
+}
+
+.change_password ul, ol {
+  margin: 1em 0;
+  padding: 0 0 0 148px;
+}
+.twocol .leftcol .reminder-again h2 {
+  font-size: 18px;
+  font-weight: normal;
+  text-transform: none;
+  margin: 30px 0 14px;
+  color: #175a2b;
+}
+.btn{
+  display: none;
+}
+li{
+  list-style: none;
+}
+body .ui-tooltip {
+  border-width: -78px;
+  display: none;
+}
+.forgetpassword{
+  padding-left: 128px;
+}
+.index .error {
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+}
+
+.index .error_msg {
+  /* display: inline-block; */
+  /* width: 100%; */
+  color: red;
+  margin-left: -126px;
+  /* font-size: 14px; */
+  /* font-weight: 100; */
+  /* margin-top: 0; */
+}
+.two {
+  margin: 0;
+  display: none;
+}
+.label-size {
+  float: left;
+  margin: 6px 9px;
+  font-size: 14px;
+  font-weight: 800;
+}
+.one {
+  padding: 0 0 0 10px;
+}
+.three {
+  padding: 0 0 0 14px;
+}
+.forget{ float: right; margin: 8px 15px 0 0;}
+.paragraph{
+  margin-top: 30px;
+}
+.imgess{
+padding-right: 10px; vertical-align: middle; height: 32px;
+}
+.btn{
+  display: none;
+}
+#my{
+  display: block;
+}
+.profile img{
+  width: 100%;
+}
+
+.taghref {
+  float: left;
+  margin-bottom: 0px;
+}
+.tag {
+  padding: 5px 0;
+  display: block;
+  max-width: 50%;
+}
+span {
+  margin-left: 5px;
+}
+.coll {
+  display: inline-block;
+  padding: 6px 0px 0 18px;
+} 
+.col1 {
+  float: left;
+  width: 100%;
+  max-width: 16%;
+}
+.col2 {
+  float: right;
+  width: 100%;
+  max-width: 84%;
+}
+.arrow li {
+  margin-bottom: 2px;
+}
+.paragraph{
+  margin-top: 30px;
+}
+.imgess{
+padding-right: 10px; vertical-align: middle; height: 32px;
+}
+.btn{
+  display: none;
+}
+#my{
+  display: block;
+}
+.btn {
+  display: inline-block;
+  width: 100%;
+  max-width: 25px;
+  cursor: pointer;
+}
+  .form-design div label {
+    float: left;
+    margin: 7px 10px 0 0;
+  }
+  .alert_error {
+    list-style: none;
+    color: red;
+  }
+.index .formm .error_msg {
+  margin-top: -0px;
+  padding: 0px 0px 0 230px;
+}
+  .input1 {
+    display: flex;
+    width: 100%;
+    max-width: 51%;
+  }
+  #new_password {
+    margin-left: 48px;
+  }
+  .form-design div {
+    margin-bottom: 2px;
+  }
+  .form-design {
+    margin-bottom: 18px;
+  }
+
+.profile img {
+  width: 100%;
+}
+.supportt .paragraph{
+  margin-top: 30px;
+}
+.supportt .imgess{
+padding-right: 10px; vertical-align: middle; height: 32px;
+}
+.supportt .List-icon{
+  display: none;
+}
+.supportt #mynav{
+  display: block;
+}
+.supportt .button {
+  /* display: inline-block; */
+  text-align: right;
+  /* width: 100%; */
+  float: right;
+  margin-top: 13px;
+}
+
+
+
+  .supportt .form-design div label {
+    float: left;
+    margin: 7px 10px 0 0;
+  }
+  .supportt  .alert_error {
+    list-style: none;
+    color: red;
+  }
+  .supportt .error_msg {
+    float: right;
+    margin-top: -43px;
+    padding: 0px 75px 0 0;
+  }
+  .supportt .input1 {
+    display: flex;
+    width: 100%;
+    max-width: 51%;
+  }
+  .supportt #new_password {
+    margin-left: 48px;
+  }
+  .supportt .form-design div {
+    margin-bottom: 2px;
+  }
+  .supportt .form-design {
+    margin-bottom: 18px;
+  }
+
+.supportt .profile img {
+  width: 100%;
+}
+.supportt .icons {
+  float: right;
+  width: 30%;
+}
+
+.students_detail #header .user {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  width: 330px;
+  height: 78px;
+  padding: 14px 0 0 78px;
+}
+#showdetailbtn{
+  display: none;
+}
+#showdetailbtnn{display: none}
+#showbbtn{display: none;}
+
+#showdetailbtn, #showdetailbtnn, #showbbtn{
+  background: #13723D;
+  border: none;
+  padding: 10px 13px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 4px;
+}
+#showdetailbtn:hover ,#showdetailbtnn:hover, #showbbtn:hover {
+  background: #2E8555;
+}
+#ch1-btn, #ch2-btn, #ch3-btn, #ch4-btn, #ch5-btn, #ch6-btn, #ch7-btn, #ch8-btn, #ch9-btn{
+  display:none;
+}
+.codinator1 {
+  float: left;
+  width: 100%;
+  max-width: 25%;
+  position: relative;
+  top: 46px;
+  left: 24px;
+}
+.codinator {
+  float: right;
+  width: 100%;
+  max-width: 76%;
+  position: relative;
+  top: -58px;
+  left: -40px;
+}
+.table-r {
+  display: inline-block;
+  width: 100%;
+  padding: -10px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 0;
+}
+.course_stats_user #header .user {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  width: 337px;
+  height: 76px;
+  padding: 14px 0 0 78px;
+}
+@media screen and (max-width: 1199px) and (min-width: 110px) {
+#topnav .inner {
+  width: 90%;
+}
+
+
+
+
+  #wrapper {
+    width: 80%;
+    background-size: 100%;
+  }
+  .public #header {
+    background-size: 100%;
+  }
+  #content {
+    width: 100%;
+    background-size: 100%;
+  }
+  #footer {
+    width: 100%;
+  }
+  .section img {
+    width: 100%;
+    max-width: 45%;
+  }
+  #wrapper {
+   width: 90%;
+  }
+  .usersright #header {
+    background-size: 100%;
+  }
+  #header .breadcrumbs {
+    left: 22px;
+    bottom: 13px;
+  }
+  #header .user .points {
+    font-size: 14px;
+  }
+  #header .user .profile {
+    height: 50px;
+    width: 50px;
+  }
+#header .user {
+  width: 240px;
+  height: 64px;
+  padding: 5px 0 0 64px;
+}
+  #content {
+    width: 100%;
+    background-size: 100%;
+  }
+  .publicright #footer, .usersright #footer {
+    width: 100%;
+    background-size: 100%;
+  }
+  .leftcol11 {
+    display: inline-block;
+    width: 100%;
+    max-width: 69.1%;
+  }
+  .twocol .leftcol {
+    width: 100%;
+    min-height: 480px;
+  }
+  .alerts .alert_error {
+    width: 85%;
+  }
+  .section {
+    padding: 20px 0px 20px 30px;
+  }
+    body.course h1, body.usersright h1 {
+    font-size: 30px;
+    line-height: 52px;
+  }
+.usersright #header {
+  background-size: 100%;
+}
+#header .breadcrumbs {
+  left: 22px;
+  bottom: 13px;
+}
+#header .user .points {
+  font-size: 14px;
+}
+#header .user .profile {
+  height: 50px;
+  width: 50px;
+}
+#header .user {
+width: 240px;
+height: 64px;
+padding: 5px 0 0 64px;
+}
+#content {
+  width: 100%;
+  background-size: 100%;
+}
+.publicright #footer, .usersright #footer {
+  width: 100%;
+  background-size: 100%;
+} 
+.section {
+  padding: 26px 50px;
+}
+.leftcol11 {
+  display: inline-block;
+  width: 100%;
+  max-width: 69.1%;
+}
+.twocol .leftcol {
+  width: 100%;
+  min-height: 480px;
+}
+  .input1 {
+    display: flex;
+    width: 100%;
+    max-width: 70%;
+  }  
+  .index .error_msg {
+ float: none;
+  margin-top: -10px;
+  padding: 0px 0px 0px 110px;
+}
+.index .error_msg {
+  float: none;
+  margin-top: -14px;
+  padding: 0px 0px 0 0;
+  width: 100%;
+  display: inline-block;
+  margin-left: 110px;
+}
+.supportt #wrapper {
+ width: 90%;
+}
+.supportt .public #header {
+  background-size: 100%;
+}
+.supportt  #header .breadcrumbs {
+  left: 22px;
+  bottom: 13px;
+}
+.supportt #header .user .points {
+  font-size: 14px;
+}
+.supportt #header .user .profile {
+  height: 50px;
+  width: 50px;
+}
+.supportt #header .user {
+width: 240px;
+height: 64px;
+padding: 5px 0 0 64px;
+}
+.supportt #content {
+  width: 100%;
+  background-size: 100%;
+}
+.supportt  .public #footer {
+  width: 100%;
+  background-size: 100%;
+} 
+.supportt .section {
+  padding: 20px 0px 20px 30px;
+}
+.supportt .fullcol .section img {
+  width: 100%;
+  max-width: 22%;
+}
+.update_profile_user .twocol .leftcol {
+  width: 70%;
+  min-height: 480px;
+}
+.students_detail #header, .classroom-wrapper #header {
+  margin-top: 20px;
+  padding: 0 18px;
+  height: 110px;
+  background-size: 100%;
+}
+.students_detail #header .user{
+  width: 300px;
+  height: 69px;
+  padding: 4px 0 0 64px;
+}
+.classroom-wrapper #header .user {
+  width: 220px;
+  height: 69px;
+  padding: 4px 0 0 64px;
+}
+.classroom-wrapper #classroom #tabs #today .row .col {
+  width: 25%;
+  margin: 14px 10px;
+  padding: 15px;
+}
+.classroom-wrapper .section img {
+  width: 100%;
+  max-width: 11%;
+}
+.classroom-wrapper .section .dev-img-2 {
+  width: 2.5%;
+}
+.classroom-wrapper .section .img-one {
+  width: 100%;
+  max-width: 60%;
+}
+.user_courses_detail .twocol .leftcol {
+  width: 70%;
+  min-height: 480px;
+}
+.users-profile-action .twocol .leftcol {
+  width: 70%;
+  min-height: 480px;
+}
+.users-profile-action table.badges td {
+  width: 182px;
+  float: none;
+}
+.users-profile-action #header {
+  background-size: 100%;
+}
+.purchase .twocol .leftcol {
+  width: 70%;
+  min-height: 480px;
+}
+.purchase .codinator {
+  top: -58px;
+  left: -20px;
+}
+.course_stats_user #header {
+  background-size: 100%;
+}
+.course_stats_user  #header .user {
+  width: 290px;
+  height: 67px;
+  padding: 5px 0 0 64px;
+}
+}
+
+@media screen and (max-width: 1160px) and (min-width: 110px) {
+.logo span {
+  margin-left: 0;
+}
+
+
+
+  #new_password {
+  margin-left: 0;
+}
+.form-design div label {
+  float: none;
+  margin: 7px 10px 0 0;
+}
+#new_password {
+  margin-top: 6px;
+}
+#confirm_new_password {
+  margin-top: 6px;
+}
+.index .error_msg {
+  margin-left: 0;
+}
+.index .error_msg ul {
+  padding: 0;
+}
+#header .user .profile {
+  height: 40px;
+  width: 40px;
+}
+#header .user {
+  width: 210px;
+  height: 60px;
+  padding: 5px 0 0 54px;
+}
+.index .formm .error_msg {
+  float: none;
+  margin-top: -0px;
+  padding: 0px 0px 0px 110px;
+}
+  .students_detail #header .user{
+  padding: 0px 0 0 50px;
+  width: 278px;
+  height: 62px;
+}
+.classroom-wrapper #header .user {
+  padding: 0px 0 0 50px;
+  width: 228px;
+  height: 63px;
+}
+}
+
+@media screen and (max-width: 1100px) and (min-width: 110px) {
+  .leftcol11 {
+  display: inline-block;
+  width: 100%;
+  max-width: 60.1%;
+}
+span {
+  margin-left: 45px;
+}
+.imgess {
+  padding-right: 10px;
+  vertical-align: bottom;
+  height: 48px;
+  padding-bottom: 19px;
+}
+.textview {
+  margin: 0 -82px;
+}
+.tag {
+  padding: 0px;
+  display: block;
+  max-width: 100%;
+  margin: -11px 0;
+}
+.taghref {
+  float: none;
+  margin-bottom: 0px;
+}
+.col1 {
+  float: left;
+  width: 100%;
+  max-width: 20%;
+}
+.col2 {
+  float: right;
+  width: 100%;
+  max-width: 80%;
+}
+.para {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+  .supportt span {
+  margin-left: 0px;
+}
+.update_profile_user .twocol .leftcol {
+  width: 65%;
+  min-height: 480px;
+}
+.classroom-wrapper #class select {
+  margin: -4px 0px 0px 80px;
+}
+.classroom-wrapper .ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-corner-all {
+  padding: 0;
+}
+.classroom-wrapper .activemenu .activa li {
+  float: none;
+  border: none;
+  width: 100%;
+  max-width: 0%;
+}
+.classroom-wrapper #classroom .activemenu .activa a {
+  color: #138446;
+  border-left: 4px solid;
+}
+.activemenu .activa q {
+  /* border: 4px solid; */
+  width: 100%;
+  padding: 3px 30px;
+  /* max-width: 100%; */
+  margin-left: -18px;
+  /* border-radius: 0 0px 8px 0px; */
+  /* border-top: 0; */
+  /* border-right: 0; */
+  /* border-left: 0; */
+}
+
+.classroom-wrapper .activemenu #ui-id-1 {
+  border-radius: 28px 0;
+}
+.classroom-wrapper .activemenu .activa a:hover {
+  background: #138446;
+  color: #fff;
+  border-radius: 28px 0;
+}
+.activemenu .activee {
+  background: #138446;
+  color: #fff;
+  border-radius: 28px 0;
+}
+.classroom-wrapper .activemenu .activa a:hover q{
+  color: #fff;
+}
+.classroom-wrapper .activemenu .activa li a q{
+  color: #999;
+}
+.user_courses_detail .twocol .leftcol {
+  width: 60%;
+  min-height: 480px;
+}
+.user_courses_detail body.course h1, body.usersright h1 {
+  font-size: 24px;
+  line-height: 52px;
+}
+.users-profile-action .twocol .leftcol {
+  width: 60%;
+  min-height: 480px;
+}
+.purchase .twocol .leftcol {
+  width: 100%;
+  min-height: auto;
+}
+.purchase .twocol .rightcol {
+  float: none;
+  width: 100%;
+  padding: 0 0 25px 0;
+  margin: 0;
+}
+.purchase  .table-r {
+  margin-bottom: 30px;
+}
+.purchase .twocol {
+  background: url(../images/rightcol/bg-sidebar.gif) top right repeat-y;
+  line-height: 18px;
+  background: transparent;
+}
+.purchase .table-tag {
+  display: inline-block;
+  width: 100%;
+  margin-top: 20px;
+}
+.purchase .codinator {
+  top: -8px;
+  left: 8px;
+  margin: 8px 0;
+  max-width: 100%;
+  text-align: center;
+}
+.purchase .codinator1 {
+  top: 0px;
+  left: -20px;
+}
+.purchase .codinator p {
+  text-align: center;
+  margin-right: 60px;
+}
+.purchase .col1 {
+  float: left;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+}
+.course_stats_user #header .user {
+  width: 260px;
+  height: 64px;
+  padding: 0px 0 0 49px;
+}
+}
+@media screen and (max-width: 1020px) and (min-width: 110px) {
+  #header .user .profile {
+  height: 40px;
+  width: 40px;
+}
+#header .user {
+  width: 192px;
+  height: 54px;
+  padding: 2px 0 0 60px;
+}
+#header .user .points {
+  font-size: 12px;
+}
+.supportt #header .user{
+width: 200px;
+height: 64px;
+padding: 3px 0 0 64px;
+}
+.students_detail #header .user{
+  padding: 0px 0 0 49px;
+  width: 248px;
+  height: 57px;
+}
+.students_detail #header, .classroom-wrapper #header {
+  height: 90px;
+}
+.classroom-wrapper #header .user {
+  padding: 0px 0 0 49px;
+  width: 195px;
+  height: 57px;
+}
+.classroom-wrapper #showdetailbtn{display:block;}
+.classroom-wrapper #showdetail{display: none;}
+.classroom-wrapper #showdetailbtnn{display: block;}
+.classroom-wrapper #showdetaill{display: none}
+
+.classroom-wrapper #exam_access .row .col {
+  width: 46%;
+  float: left;
+  position: relative;
+  padding: 0px 10px;
+}
+}
+@media screen and (max-width: 980px) and (min-width: 110px) {
+ #b2 {
+  padding: 0;
+} 
+
+
+  #header {
+  height: 87px;
+}
+#wrapper {
+  width: 95%;
+}
+.sectionbg {
+  padding: 20px;
+}
+.coll {
+  display: inline-block;
+  padding: 0;
+}
+.col1 {
+  float: none;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.col2 {
+  float: none;
+  width: 100%;
+  max-width: 100%;
+}
+#\31 1 {
+  margin-left: 2px;
+}
+.public_course_list h3 {
+  margin-top: 0;
+  font-size: 20px;
+  font-weight: normal;
+  text-align: center;
+}
+.description {
+  line-height: 18px;
+  margin-bottom: 30px;
+  display: inline-block;
+  width: 100%;
+  text-align: -moz-center;
+  text-align: -webkit-center;
+}
+#course_description {
+  text-align: justify;
+  padding-left: 50px;
+}
+.arrow li {
+  margin-bottom: 2px;
+  text-align: left;
+}
+.arrow{
+  padding:0 0 0 64px;
+}
+.col2 p{
+  text-align: center;
+}
+.para1 {
+  float: left;
+  width: 100%;
+  max-width: 50%;
+}
+.supportt .icons img {
+    width: 25%;
+  }
+  .user_courses_detail body.course h1, body.usersright h1 {
+  font-size: 20px;
+  line-height: 52px;
+}
+}
+
+@media screen and (max-width: 900px) and (min-width: 110px) {
+.update_profile_user .twocol .leftcol {
+  width: 60%;
+  min-height: 480px;
+}
+.update_profile_user form .row input[type="text"], form .row input[type="password"], form .row textarea, form .lastrow textarea {
+  float: left;
+  width: 350px;
+}
+.update_profile_user  body.course h1, body.usersright h1 {
+  font-size: 26px;
+  line-height: 52px;
+  margin-right: 0;
+}
+.course_stats_user #header .user {
+  width: 230px;
+  height: 55px;
+  padding: 0px 0 0 49px;
+}
+}
+@media screen and (max-width: 880px) and (min-width: 110px) {
+      #header .user .profile {
+        height: 30px;
+        width: 30px;
+      }
+      #header .user {
+        width: 173px;
+        height: 51px;
+        padding: 1px 0 0 52px;
+      }
+      .leftcol11 {
+        display: inline-block;
+        width: 100%;
+        max-width: 54.1%;
+      }
+      body.course h1, body.usersright h1 {
+        font-size: 26px;
+        line-height: 52px;
+      }
+      .students_detail #header .user{
+  padding: 0px 0px 0px 50px;
+  width: 230px;
+  height: 54px;
+}
+.classroom-wrapper #header .user {
+  padding: 0px 0px 0px 50px;
+  width: 183px;
+  height: 54px;
+}
+.students_detail #header .user .profile , .classroom-wrapper #header .user .profile{
+  height: 40px;
+  width: 40px;
+}
+
+
+}
+@media screen and (max-width: 820px) and (min-width: 110px) {
+.twocol {
+  background:none;
+  line-height: 18px;
+}
+.leftcol11 {
+  display: inline-block;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+}
+.twocol .rightcol {
+  float: none;
+  width: 100%;
+  padding: 0 0 25px 0;
+  margin: 0;
+}
+#content .twocol .rightcol .viewprofile .button_green {
+  padding-left: 65px;
+  padding-right: 65px;
+  width: 80%;
+}
+
+body.course h1, body.usersright h1 {
+  font-size: 26px;
+  line-height: 52px;
+  margin: 0;
+}
+.alerts .alert_error {
+  width: 96%;
+}
+#course_description {
+  padding: 0;
+}
+.lifirst {
+  float: left;
+  width: 100%;
+  max-width: 50%;
+}
+.lisecond {
+  float: left;
+  width: 100%;
+  max-width: 50%;
+}
+.arrow {
+  padding: 0 0 0 38px;
+}
+#content .button_green_sml {
+  width: 80%;
+}
+.nav li {
+  float: left;
+  width: 100%;
+  max-width: 47%;
+  text-align: start;
+  margin-left: 10px;
+  margin-bottom: 30px;
+}
+.twocol .rightcol ul.nav {
+  margin: 0;
+  padding: 0 0 0 70px;
+  list-style: none;
+  font-size: 14px;
+}
+.reminder .form-design .label1 {
+  text-align: left;
+}
+.change_password  .error_msg ul {
+  padding: 0 0 1px 52px;
+  text-align: left;
+}
+.change_password .reminder .alert_error {
+  list-style: none;
+  color: red;
+  margin-left: -52px;
+}
+.change_password .reminder .button_green {
+  width: 100%;
+}
+.change_password .twocol .leftcol {
+  width: 100%;
+  min-height: 380px;
+}
+.change_password .input1 {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+}
+.update_profile_user .twocol .leftcol {
+  width: 100%;
+  min-height: 480px;
+}
+.update_profile_user form .row input[type="text"], form .row input[type="password"], form .row textarea, form .lastrow textarea {
+  float: left;
+  width: 400px;
+}
+.classroom-wrapper .section .dev-img-2 {
+  width: 3.5%;
+}
+.classroom-wrapper .section .img-one {
+  width: 100%;
+  max-width: 100%;
+}
+#ch1-btn, #ch2-btn, #ch3-btn, #ch4-btn, #ch5-btn, #ch6-btn, #ch7-btn, #ch8-btn, #ch9-btn{
+  display: block;
+  border: 0;
+  background: #158749;
+  padding: 10px 30px;
+  margin: 10px 0;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: bolder;
+}
+#ch1-btn:hover, #ch2-btn:hover, #ch3-btn:hover, #ch4-btn:hover, #ch5-btn:hover, #ch6-btn:hover, #ch7-btn:hover, #ch8-btn:hover, #ch9-btn:hover{
+  background: #1C6E41;
+}
+#ch1-user, #ch2-user, #ch3-user, #ch4-user, #ch5-user, #ch6-user, #ch7-user, #ch8-user, #ch9-user{
+  display: none;
+}
+.user_courses_detail .twocol .leftcol {
+  width: 100%;
+  min-height: 480px;
+}
+.users-profile-action .twocol .leftcol {
+  width: 100%;
+  min-height: 480px;
+}
+.users-profile-action .twocol .rightcol {
+  float: none;
+  width: 100%;
+  padding: 0 0 25px 0;
+  margin: 0;
+  text-align:center ;
+}
+.users-profile-action .rightcol .totalpoints .inner {
+  left: 200px;
+}
+}
+@media screen and (max-width: 800px) and (min-width: 110px) {
+.headersize {
+  margin-top: 0px;
+}
+.usersright #header {
+  height: 8px;
+}
+#content {
+  width: 100%;
+  background-size: 100%;
+  padding-top: 71px;
+}
+.headerr {
+  display: inline-block;
+  width: 100%;
+  background-color: #409E67;
+  z-index: 9999;
+  opacity: 10%;
+  border: 1px solid;
+  height: 70px;
+  position: relative;
+  margin-top: 11px;
+}
+.btn{
+  display: none;
+}
+#my{
+  display: block;
+}
+.index #content {
+  width: 100%;
+  background-size: 100%;
+  padding-top: 0;
+}
+.supportt .List-icon{
+  display: none;
+}
+.supportt #content {
+  width: 100%;
+  background-size: 100%;
+  padding-top: 0px;
+}
+.students_detail #header, .classroom-wrapper #header {
+  height: 9px;
+}
+.classroom-wrapper #classroom #tabs #today .row .col {
+  width: 90%;
+  margin: 10px 10px;
+  padding: 22px;
+  text-align: center;
+}
+.classroom-wrapper .section img {
+  width: 100%;
+  max-width: 5%;
+}
+.classroom-wrapper .col span {
+  margin-left: 0;
+}
+.users-profile-action .rightcol .totalpoints .inner {
+  left: 190px;
+}
+.users-profile-action #header {
+  height: 7px;
+}
+.users-profile-action .headerr {
+  height: 80px;
+  margin-top: 10px;
+}
+.users-profile-action .section_profile {
+  padding: 10px 0px 0px 50px;
+  overflow: hidden;
+}
+.course_stats_user .headerr {
+  margin-top: 20px;
+}
+.course_stats_user #header {
+  height: 7px;
+}
+}
+@media screen and (max-width: 740px) and (min-width: 110px) {
+.usernav {
+  display: none;
+}
+.btn{
+  display: block;
+}
+#my{
+  display: none;
+}
+#content .twocol .rightcol .viewprofile .button_green {
+  padding-left: 65px;
+  padding-right: 65px;
+  width: 70%;
+}
+.supportt .usernav {
+  display: none;
+}
+.supportt .List-icon{
+  display: block;
+}
+.supportt .icons img {
+    width: 23%;
+  }
+.supportt .section .icons {
+
+  width: 280px;
+  position: absolute;
+  top: 67px;
+  right: -76px;
+}
+.supportt .section .icons {
+  width: 220px;
+  position: absolute;
+  top: 60px;
+  right: 4px;
+}
+.users-profile-action .rightcol .totalpoints .inner {
+  left: 150px;
+}
+
+     .b1 {
+      display: none;
+      width: 100%;
+      max-width: 100%;
+    } 
+    .b2{
+      display: block;
+    }   
+    #topnav ul{
+      display: block;
+    }
+}
+@media screen and (max-width: 2500px) and (min-width: 721px) {
+   .b2{
+      display: block !important;
+    }   
+    #topnav ul{
+      display: block !important;
+    }
+  }
+@media screen and (max-width: 720px) and (min-width: 110px) {
+     .b1 {
+      display: block;
+      width: 9%;
+      float: right;
+      max-width: 100%;
+    } 
+    .b2{
+      display: none;
+    }   
+    #topnav ul{
+      display: none;
+    }
+#content {
+    width: 100%;
+    background-size: 100%;
+    padding-top: 3px;
+    margin-top: 0%;
+}
+
+.b1 img {
+  width: 70%;
+  margin-top: 4px;
+  float: right;
+}
+#topnav ul {
+  float: right;
+  list-style: none;
+  margin: 9px 0;
+  color: #fff;
+  min-width: 110px;
+  width: 100%;
+  background-color: #3FB171;
+}
+#topnav ul li {
+  float: none;
+  padding: 0;
+  border-left: 0;
+}
+#topnav ul li:hover {
+  background-color: #177741;
+  color: #fff;
+}
+
+      #wrapper {
+        width: 95%;
+        background-size: 100%;
+      }
+      .section img {
+        width: 100%;
+        max-width: 65%;
+      }
+      .section {
+        padding: 30px 30px;
+      }
+      .sectionbg {
+      padding: 40px 0;
+    }
+  .logoo form {
+      width: 100%;
+      margin: 20px auto 0;
+      height: 220px;
+    }
+    table {
+      margin-bottom: 16px;
+      width: 100%;
+    }
+    input[type="text"], input[type="password"] {
+      width: 95%;
+    }
+    .one {
+      padding: 0px 20px;
+    }
+    .label-size{
+        margin: 4px 0px 10px 0px;
+        font-size: 14px;
+    }
+    .three {
+      padding: 0px 20px;
+    }
+    .error {
+      display: inline-block;
+      width: 100%;
+      text-align: left;
+    }
+    .error_msg {
+      margin-left: 20px;
+      font-size: 15px;
+      font-weight: 100;
+      margin-top: 0;
+    }
+    .four{
+      margin: 1em 0;
+      padding: 0 0 0 0px;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+    }
+
+    .usernav {
+      display: none;
+    }
+    .btn{
+      display: block;
+    }
+    #my{
+      display: none;
+    }
+    .btn {
+      display: inline-block;
+      width: 100%;
+      max-width: 25px;
+      cursor: pointer;
+    }
+.change_password .reminder .alert_error {
+  list-style: none;
+  color: red;
+  margin-left: -72px;
+}
+.index .formm .error_msg {
+  float: none;
+  margin-top: -0px;
+  padding: 0px 0px 0px 22px;
+}
+.supportt .sectionbg {
+  padding: 40px 20px;
+}
+#classroom span#class {
+  margin-bottom: 70px;
+  display: block;
+  font-size: 30px;
+  margin-left: 0;
+}
+#classroom span#class form {
+  font-size: 14px;
+  position: absolute;
+  top: 70px;
+  left: -50px;
+}
+.user_courses_detail .sectionbg {
+  padding: 40px 20px;
+}
+.purchase .col1 {
+  text-align: left;
+}
+.purchase .codinator1 {
+  top: 0px;
+  left: 20px;
+}
+.purchase .public_course_list h3 {
+  text-align: left;
+  margin-bottom: 10px;
+}
+.purchase .description {
+  text-align: left;
+}
+.purchase .codinator p {
+  text-align: left;
+  margin-right: 60px;
+}
+}
+@media screen and (max-width: 640px) and (min-width: 110px){
+.supportt .section .icons {
+
+  width: 280px;
+  position: absolute;
+  top: 67px;
+  right: -76px;
+}
+.supportt  .icons img {
+    width: 20%;
+  }
+ 
+.supportt  form .row input[type="text"], form .row input[type="password"] {
+  float: left;
+  width: 370px;
+  margin-top: 3px;
+ }
+.supportt  form .row textarea, form .lastrow textarea{
+  max-width: 397px;
+ }
+  .supportt  form .row select {
+    float: left;
+    width: 412px;
+    border: 1px solid #DCD8D8;
+    background: #fff;
+    padding: 6px;
+    margin-bottom: 4px;
+    outline: none;
+  }
+   .supportt  form .submitrow {
+      margin: 16px 0 0 0px;
+  }
+.supportt  #content .button_green{
+    width: 385px;
+  }
+.supportt .section .icons {
+  width: 200px;
+  position: absolute;
+  top: 64px;
+  right: 1px;
+}
+.users-profile-action .rightcol .totalpoints .inner {
+  left: 120px;
+}
+}
+
+@media screen and (max-width: 610px) and (min-width: 110px) {
+#showdetailbtn, #showdetailbtnn {
+  background: #13723D;
+  border: none;
+  padding: 10px 12px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 4px;
+  font-size: 10px;
+}
+.classroom-wrapper .section .dev-img-2 {
+  width: 5.5%;
+}
+}
+@media screen and (max-width: 540px) and (min-width: 110px) {
+#header .user {
+  width: 86%;
+  height: 75px;
+  padding: 1px 0 0 52px;
+}
+.headerr {
+  height: 84px;
+}
+#header .breadcrumbs {
+  left: 12px;
+  bottom: 1px;
+  margin-bottom: 5px;
+} 
+#header .user .profile {
+  height: 40px;
+  width: 40px;
+}
+#content {
+  width: 100%;
+  background-size: 100%;
+  padding-top: 100px;
+}
+.index .sectionbg form {
+  width: 440px;
+  display: block;
+  margin: 10px auto 0;
+}
+.supportt  .section .icons {
+   width: 139px;
+  position: absolute;
+  top: 78px;
+  right: 110px;
+  height: 43px;
+}
+ .supportt  .icons img {
+    width: 31%;
+  }
+.supportt  .List-icon{
+  display: none;
+}
+.supportt  form .row input[type="text"], form .row input[type="password"]{
+  float: left;
+  width: 370px;
+ }
+ .supportt  form .row textarea, form .lastrow textarea{
+    max-width: 370px;
+  }
+
+ .supportt  form .row select {
+    float: left;
+    width: 385px;
+    border: 1px solid #DCD8D8;
+    background: #fff;
+    padding: 6px;
+    margin-bottom: 4px;
+    outline: none;
+  }
+ .supportt  form .submitrow {
+      margin: 16px 0 0 0px;
+  }
+.supportt  #content .button_green{
+    width: 385px;
+  }
+  .supportt .section .icons {
+  width: 100px;
+  position: absolute;
+  top: 78px;
+  right: 160px;
+  height: 43px;
+}
+.supportt .fullcol .section img {
+  width: 100%;
+  max-width: 30%;
+}
+.supportt .section h2 {
+  margin-bottom: 20px;
+}
+.students_detail #header .user {
+  padding: 0px 0px 0px 50px;
+  width: 463px;
+  height: 74px;
+}
+.students_detail .fullcol .alerts, .classroom-wrapper #header .fullcol .alerts{
+  padding-bottom: 0px;
+}
+.classroom-wrapper #header .user {
+  padding: 0px 0px 0px 50px;
+  width: 390px;
+  height: 74px;
+}
+#header .breadcrumbs {
+  left: 37px;
+  bottom: 1px;
+  margin-bottom: 5px;
+}
+.users-profile-action .rightcol .totalpoints .inner {
+  left: 70px;
+}
+.course_stats_user #header .user {
+  width: 440px;
+  height: 72px;
+  padding: 0px 0 0 49px;
+}
+.b1 img {
+  width: 100%;
+  margin-top: 4px;
+  float: right;
+}
+#content {
+    width: 100%;
+    background-size: 100%;
+    padding-top: 3px;
+    margin-top: 0%;
+}
+}
+@media screen and (max-width: 520px) and (min-width: 110px){
+
+.twocol .rightcol ul.nav {
+  margin: 0;
+  padding: 0 0 0 120px;
+  list-style: none;
+  font-size: 14px;
+}
+.nav li {
+  float: left;
+  width: 100%;
+  max-width: 70%;
+  text-align: start;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.lifirst {
+  float: none;
+  width: 100%;
+  max-width: 100%;
+}
+.lisecond {
+  float: none;
+  width: 100%;
+  max-width: 100%;
+}
+
+.forgetpassword {
+  padding-left: 80px;
+}
+.forget {
+  float: none;
+  margin: 0px 0 0 10px;
+}
+.logoo form {
+  width: 100%;
+  display: inline;
+  margin: 10px auto 0;
+}
+.index input[type="text"], input[type="password"] {
+  width: 85%;
+}
+.supportt  .section .icons {
+   width: 139px;
+  position: absolute;
+  top: 78px;
+  right: 110px;
+  height: 43px;
+}
+ .supportt  .icons img {
+    width: 31%;
+  }
+
+ .supportt   form .row input[type="text"], form .row input[type="password"] {
+  float: left;
+  width: 350px;
+ }
+.supportt  form .row textarea, form .lastrow textarea{
+  max-width: 350px;
+}
+ .supportt  form .row select {
+    float: left;
+    width: 365px;
+    border: 1px solid #DCD8D8;
+    background: #fff;
+    padding: 6px;
+    margin-bottom: 4px;
+    outline: none;
+  }
+ .supportt  form .submitrow {
+      margin: 16px 0 0 0px;
+  }
+.supportt   #content .button_green{
+    width: 365px;
+  }
+  .supportt .section .icons {
+  width: 139px;
+  position: absolute;
+  top: 88px;
+  right: 170px;
+  height: 63px;
+}
+.update_profile_user form .row input[type="text"], form .row input[type="password"], form .row textarea, form .lastrow textarea {
+  float: left;
+  width: 300px;
+}
+.update_profile_user .lastrow p {
+  padding-left: 0;
+}
+.update_profile_user form .submitrow {
+  margin: 16px 0 0 120px;
+}
+.students_detail #header .user{
+  padding: 0px 0px 0px 50px;
+  width: 410px;
+  height: 74px;
+}
+.students_detail #header .breadcrumbs, .classroom-wrapper #header .breadcrumbs {
+  left: 45px;
+  bottom: 1px;
+  margin-bottom: 5px;
+}
+.classroom-wrapper #header .user {
+  padding: 0px 0px 0px 50px;
+  width: 363px;
+  height: 74px;
+}
+.users-profile-action ul.course_progress li {
+  width: 300px;
+  margin-bottom: 14px;
+}
+.users-profile-action ul.course_progress h4 {
+  font-size: 12px;
+  margin: 0;
+  padding: 0 20px 2px;
+}
+.users-profile-action .badges img {
+  width: 40%;
+}
+.course_stats_user #header .user {
+  width: 400px;
+  height: 72px;
+  padding: 0px 0 0 49px;
+}
+}
+
+@media screen and (max-width: 480px) and (min-width: 110px) {
+#header .user {
+  width: 80%;
+  height: 75px;
+}
+#header .breadcrumbs {
+  left: 30px;
+}
+#content .twocol .rightcol .viewprofile .button_green {
+  padding-left: 65px;
+  padding-right: 65px;
+  width: 65%;
+}
+.twocol .rightcol ul.nav {
+  margin: 0;
+  padding: 0 0 0 80px;
+  list-style: none;
+  font-size: 14px;
+}
+.index .sectionbg form {
+  width: 400px;
+  display: block;
+  margin: 10px auto 0;
+}
+.index input[type="text"], input[type="password"] {
+  width: 100%;
+}
+.supportt   .section .icons {
+   width: 139px;
+  position: absolute;
+  top: 78px;
+  right: 110px;
+  height: 43px;
+}
+ .supportt  .icons img {
+    width: 31%;
+  }
+
+.supportt form .row input[type="text"], form .row input[type="password"]{
+  float: left;
+  width: 280px;
+ }
+ .supportt  form .row textarea, form .lastrow textarea{
+    max-width: 280px;
+  }
+ .supportt  form .row select {
+    float: left;
+    width: 295px;
+    border: 1px solid #DCD8D8;
+    background: #fff;
+    padding: 6px;
+    margin-bottom: 4px;
+    outline: none;
+  }
+
+ .supportt   form .submitrow {
+      margin: 16px 0 0 0px;
+  }
+ .supportt  #content .button_green{
+    width: 295px;
+  }
+  .supportt .section .icons {
+    top: 85px;
+    right: 140px;
+    height: 43px;
+  }
+  .supportt form .row input[type="text"], form .row input[type="password"] {
+  float: left;
+  width: 90%;
+}
+.supportt form .row textarea, form .lastrow textarea {
+  max-width: 90%;
+}
+.supportt form .row select {
+  width: 94%;
+}
+.supportt #content .button_green {
+  width: 100%;
+}
+.update_profile_user .lastrow input {
+  margin-top: 10px;
+}
+.update_profile_user form .submitrow {
+  margin: 16px 0 0 100px;
+}
+.students_detail #header .user {
+  padding: 0px 0px 0px 50px;
+  width: 370px;
+  height: 74px;
+}
+.classroom-wrapper #header .user {
+  padding: 0px 0px 0px 50px;
+  width: 315px;
+  height: 74px;
+}
+.classroom-wrapper #exam_access .row .col {
+  width: 100%;
+  float: left;
+  position: relative;
+  padding: 0px 10px;
+}
+#showbbtn{display: block;}
+#showdetaills{display: none;}
+#showdetaills {
+  resize: none;
+  overflow-y: hidden;
+  height: 300px;
+  opacity: 0.97097;
+  width: 48%;
+}
+.users-profile-action .rightcol .totalpoints .inner {
+  left: 50px;
+}
+.course_stats_user #header .user {
+  width: 380px;
+  height: 72px;
+  padding: 0px 0 0 49px;
+}
+}
+@media screen and (max-width: 440px) and (min-width: 110px){
+.fullcol a {
+  color: #138446;
+  width: 100%;
+}
+.forgetpassword {
+  padding-left: 0;
+}
+#content .button_green {
+  width: 80%;
+}
+.fullcol a {
+  width: 100%;
+  display: inline-block;
+  margin-top: 10px;
+}
+.section {
+  padding: 30px 0px;
+}
+.index .sectionbg form {
+  width: 370px;
+  display: block;
+  margin: 10px auto 0;
+}
+.index input[type="text"], input[type="password"] {
+  width: 90%;
+}
+.students_detail #header .user {
+  padding: 0px 0px 0px 50px;
+  width: 335px;
+  height: 74px;
+}
+.classroom-wrapper #header .user {
+  padding: 0px 0px 0px 50px;
+  width: 287px;
+  height: 74px;
+}
+.classroom-wrapper #tabs ul li {
+  float: none;
+  border: none;
+  width: 100%;
+  max-width: 38%;
+}
+.classroom-wrapper .fullcol a {
+  margin-top: 0px;
+}
+.classroom-wrapper #classroom #tabs #today .row .col {
+  width: 80%;
+  margin: 10px 10px;
+  padding: 22px;
+  text-align: center;
+}
+.classroom-wrapper #class select {
+  width: 200px;
+  border: 1px solid #DCD8D8;
+  padding: 6px;
+  outline: none;
+  margin: -4px 0px 0px 30px;
+}
+.classroom-wrapper .section {
+  padding: 30px 10px;
+}
+.classroom-wrapper #class select {
+  width: 210px;
+  border: 1px solid #DCD8D8;
+  padding: 6px;
+  outline: none;
+  margin: -4px 0px 0px 60px;
+}
+.users .classroom_table th a {
+  color: #000;
+  display: block;
+  padding: 10px 0px;
+}
+.classroom-wrapper .section .img-one {
+  width: 100%;
+  max-width: 60%;
+}
+.user_courses_detail .section {
+  padding: 30px 20px;
+}
+.user_courses_detail  .imgright {
+  float: none;
+  margin: 0 80px 20px 110px;
+}
+.users-profile-action .rightcol .totalpoints .inner {
+  left: 30px;
+}
+.purchase .codinator1 {
+  top: 0px;
+  left: 20px;
+  max-width: 30%;
+}
+.purchase .sectionbg {
+  padding: 40px 10px;
+}
+.course_stats_user #header .user {
+  width: 350px;
+  height: 72px;
+  padding: 0px 0 0 49px;
+}
+}
+@media screen and (max-width: 420px) and (min-width: 110px){
+  #content .twocol .rightcol .viewprofile .button_green {
+  padding-left: 65px;
+  padding-right: 65px;
+  width: 60%;
+}
+.twocol .rightcol ul.nav {
+  margin: 0;
+  padding: 0px 0 0 50px;
+  list-style: none;
+  font-size: 14px;
+}
+.para1 {
+  float: none;
+  width: 100%;
+  max-width: 90%;
+}
+.alerts .alert_error {
+  width: 90%;
+}
+.arrow li {
+  margin-bottom: 10px;
+  text-align: left;
+}
+#header .breadcrumbs {
+  left: 20px;
+}
+.index .sectionbg form {
+  width: 340px;
+  display: block;
+  margin: 10px auto 0;
+}
+.supportt .section .icons {
+  top: 85px;
+  right: 120px;
+  height: 43px;
+}
+.update_profile_user form .row input[type="text"], form .row input[type="password"], form .row textarea, form .lastrow textarea {
+  float: left;
+  width: 250px;
+}
+.update_profile_user form .submitrow {
+  margin: 16px 0 0 50px;
+}
+.students_detail #header .user{
+  padding: 0px 0px 0px 50px;
+  width: 310px;
+  height: 74px;
+}
+.classroom-wrapper #header .user {
+  padding: 0px 0px 0px 50px;
+  width: 267px;
+  height: 74px;
+}
+.classroom-wrapper .section img {
+  width: 100%;
+  max-width: 10%;
+}
+.user_courses_detail .imgright {
+  float: none;
+  margin: 0 0px 30px 100px;
+  display: block;
+}
+.users-profile-action .rightcol .totalpoints .inner {
+  left: 20px;
+}
+.users-profile-action  .section_profile_bg {
+  padding: 40px 20px;
+  background: url(../images/bg-sectionbg.gif) 0 0 repeat-x;
+}
+.course_stats_user #header .user {
+  width: 330px;
+  height: 72px;
+  padding: 0px 0 0 49px;
+}
+}
+
+@media screen and (max-width: 380px) and (min-width: 110px){
+.index .sectionbg {
+  padding: 30px 0;
+}
+.index .sectionbg form {
+  width: 260px;
+  display: block;
+  margin: 10px auto 0;
+}
+.supportt .section .icons {
+  top: 85px;
+  right: 90px;
+  height: 43px;
+}
+.update_profile_user form .submitrow {
+  margin: 16px 0 0 0px;
+}
+.update_profile_user #content .button_green {
+  width: 100%;
+}
+.update_profile_user form .row input[type="text"], form .row input[type="password"], form .row textarea, form .lastrow textarea {
+  float: left;
+  width: 200px;
+}
+.students_detail #header .user {
+  padding: 0px 0px 0px 50px;
+  width: 285px;
+  height: 74px;
+}
+.students_detail #header .breadcrumbs, .classroom-wrapper #header .breadcrumbs {
+  left: 38px;
+  bottom: 1px;
+  margin-bottom: 5px;
+}
+.classroom-wrapper #header .user {
+  padding: 0px 0px 0px 50px;
+  width: 237px;
+  height: 74px;
+}
+.classroom-wrapper q {
+  /* border: 4px solid; */
+  width: 100%;
+  padding: 3px 20px;
+  /* max-width: 100%; */
+  margin-left: -18px;
+  /* border-radius: 0 0px 8px 0px; */
+  /* border-top: 0; */
+  /* border-right: 0; */
+  /* border-left: 0; */
+}
+.user_courses_detail .imgright {
+  float: none;
+  margin: 0 0px 30px 60px;
+  display: block;
+}
+.user_courses_detail body.course h1, body.usersright h1 {
+  font-size: 18px;
+  line-height: 52px;
+  margin: 0;
+  font-weight: bold;
+}
+.users-profile-action .rightcol .totalpoints .inner {
+  left: 30px;
+  margin-left: 10px;
+}
+.users-profile-action ul.course_progress li {
+  width: 280px;
+  margin-bottom: 14px;
+}
+.users-profile-action ul.course_progress .percent_light {
+  position: absolute;
+  top: 14px;
+  right: 4px;
+  color: #fff;
+}
+.course_stats_user #header .user {
+  width: 300px;
+  height: 72px;
+  padding: 0px 0 0 49px;
+}
+#content {
+    width: 100%;
+    background-size: 100%;
+    padding-top: 3px;
+    margin-top: 0%;
+}
+.b1 img {
+    width: 100%;
+    margin-top: 0px;
+    float: right;
+    position: relative;
+    top: 0px;
+}
+}
+
+@media screen and (max-width: 360px) and (min-width: 110px){
+.users-profile-action ul.course_progress li {
+  width: 240px;
+  margin-bottom: 14px;
+}
+.users-profile-action ul.course_progress .percent_wrapper {
+  margin: 20px 20px 12px 20px;
+  height: 30px;
+}
+.users-profile-action ul.course_progress .percent {
+  height: 30px;
+}
+.users-profile-action ul.course_progress .percent_light {
+  top: 8px;
+  right: 12px;
+}
+.course_stats_user #header .user {
+  width: 280px;
+  height: 72px;
+  padding: 0px 0 0 49px;
+}
+}
+@media screen and (max-width: 340px) and (min-width: 110px){
+#content .twocol .rightcol .viewprofile .button_green {
+  padding-left: 65px;
+  padding-right: 65px;
+  width: 50%;
+}
+.twocol .rightcol ul.nav {
+  margin: 0;
+  padding: 0px 0 0 50px;
+  list-style: none;
+  font-size: 13px;
+}
+#header .breadcrumbs {
+  left: 5px;
+}
+.section {
+  padding: 30px 0px;
+}
+.section img {
+  width: 100%;
+  max-width: 85%;
+}
+.students_detail #header .user{
+  padding: 0px 0px 0px 50px;
+  width: 246px;
+  height: 74px;
+}
+.classroom-wrapper #header .user {
+  padding: 0px 0px 0px 50px;
+  width: 200px;
+  height: 74px;
+}
+.classroom-wrapper q {
+  /* border: 4px solid; */
+  width: 100%;
+  padding: 3px 13px;
+  /* max-width: 100%; */
+  margin-left: -18px;
+  /* border-radius: 0 0px 8px 0px; */
+  /* border-top: 0; */
+  /* border-right: 0; */
+  /* border-left: 0; */
+}
+.classroom-wrapper #tabs ul li {
+  float: none;
+  border: none;
+  width: 100%;
+  max-width: 60%;
+}
+.users-profile-action .rightcol .totalpoints .inner {
+  left: 0px;
+  margin-left: 10px;
+}
+.course_stats_user #header .user {
+  width: 270px;
+  height: 72px;
+  padding: 0px 0 0 49px;
+}
+}
+
+@media screen and (max-width: 320px) and (min-width: 110px){
+#header .breadcrumbs {
+  left: 16px;
+}
+#header .user {
+  width: 75%;
+  height: 75px;
+}
+.para1 {
+  float: none;
+  width: 100%;
+  max-width: 80%;
+}
+.twocol .rightcol ul.nav {
+  margin: 0;
+  padding: 0px 0 0 45px;
+  list-style: none;
+  font-size: 12px;
+}
+.section {
+  padding: 20px 0px 20px 0px;
+}
+#\31 1 {
+  margin-left: 2px;
+  line-height: 2;
+}
+.section {
+  padding: 20px 0px;
+}
+.fullcol a {
+  color: #138446;
+  width: 80%;
+}
+.supportt .section h2 {
+  margin-bottom: 22px;
+}
+.supportt .section .icons {
+  top: 90px;
+  right: 65px;
+  height: 43px;
+}
+.supportt .section {
+  padding: 20px 0px 20px 10px;
+}
+.students_detail #header .breadcrumbs , .classroom-wrapper #header .breadcrumbs{
+  left: 18px;
+  bottom: 1px;
+  margin-bottom: 5px;
+}
+.classroom-wrapper #classroom #tabs #today .row .col {
+  width: 70%;
+  margin: 10px 10px;
+  padding: 15px;
+  text-align: center;
+}
+.classroom-wrapper .section .dev-img-2 {
+  width: 11.5%;
+}
+.classroom-wrapper #legend_link a {
+  color: #138446;
+  font-size: 10px;
+}
+.user_courses_detail .imgright {
+  float: none;
+  margin: 0 0px 10px 40px;
+  display: block;
+}
+.user_courses_detail .section {
+  padding: 0px 10px;
+}
+.user_courses_detail  .user_chapter_list{
+  margin: 1em 0;
+  padding: 0 0 0 20px;
+}
+.users-profile-action .section_profile {
+  padding: 10px 0px 0px 44px;
+  overflow: hidden;
+}
+.users-profile-action .section_profile_bg {
+  padding: 0px 20px;
+}
+.purchase span#foundation {
+  display: none;
+}
+.course_stats_user #header .user {
+  width: 250px;
+  height: 72px;
+  padding: 0px 0 0 49px;
+}
+.b1 img {
+  width: 100%;
+  margin-top: 4px;
+  float: right;
+}
+}
+@media screen and (max-width: 280px) and (min-width: 110px){
+ .supportt  .section h1{
+    font-size: 20px;
+    margin: 0px 69px 20px 0;
+  }
+ .supportt  .section h2{
+    font-size: 13px;
+  }
+
+ .supportt  .section .icons {
+    width: 139px;
+    position: absolute;
+    top: 93px;
+    right: 31px;
+    height: 43px;
+}
+ .supportt  .icons img {
+    width: 25%;
+  }
+
+.supportt  form .row input[type="text"], form .row input[type="password"], form .row textarea, form .lastrow textarea{
+  float: left;
+  width: 160px;
+   margin-top: 3px;
+ }
+.supportt  form .row select {
+    float: left;
+    width: 175px;
+    border: 1px solid #DCD8D8;
+    background: #fff;
+    padding: 6px;
+    margin-bottom: 4px;
+    outline: none;
+  }
+
+ .supportt   form .submitrow {
+      margin: 1px 0 0 0px;
+  }
+ .supportt #content .button_green{
+    width: 175px;
+  }
+.classroom-wrapper #header .user {
+  padding: 0px 0px 0px 50px;
+  width: 168px;
+  height: 74px;
+}
+}
