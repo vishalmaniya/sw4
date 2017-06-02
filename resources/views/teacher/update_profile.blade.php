@@ -20,16 +20,14 @@
 @section('content')
 <div class="twocolwrapper">
     <div class="twocol">
-        <div class="leftcol11">
         <div class="leftcol">
             <div class="section">
                 <h1>Update Profile:</h1>
             </div>
-            <div class="sectionbg">
+            <div class="reminder-again">
                 <ul class="alerts"><li class="alert_error">The Email field is required.</li>
                 </ul>
                 <form class="" action="" method="post">
-
                     <div>
                         <h2 style="margin-top:0;">Personal Information:</h2>
                         <div class="row">
@@ -54,7 +52,6 @@
                     </div>
                 </form>
             </div>
-        </div>
         </div>
         @include('teacher.layouts.right_panel')
         <div class="clear"></div>

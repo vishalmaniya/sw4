@@ -5,6 +5,7 @@
         <title>Studio Web | <?php echo $__env->yieldContent('title'); ?></title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Interactive JavaScript, PHP, HTML and CSS video training for the k-12 classroom">
         <meta name="keywords" content="web design, web training, institution, school, education, html, css, photoshop, javascript, php, php training, javascript training, html training, interactive education, online education, teachers aid, teacher, student, student aid, tutoring, online tutoring">
 
@@ -13,18 +14,17 @@
         <link rel="shortcut icon" type="image/x-icon" href="http://dev.studioweb.com/favicon.ico" />
 
         <link href="<?php echo e(asset('front_assets/css/normalize.css')); ?>" media="screen" rel="stylesheet" type="text/css" />
-        <link href="<?php echo e(asset('front_assets/css/style.css?v=1.0.25')); ?>" media="screen" rel="stylesheet" type="text/css" />
-        <link href="<?php echo e(asset('front_assets/css/responsive.css')); ?>" media="screen" rel="stylesheet" type="text/css" />
+        <link href="<?php echo e(asset('front_assets/css/style.css')); ?>" media="screen" rel="stylesheet" type="text/css" />
         <link href="<?php echo e(asset('front_assets/script/fancybox/jquery.fancybox.css')); ?>" media="screen" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-        <link href="<?php echo e(asset('front_assets/css/style1.css')); ?>" media="screen" rel="stylesheet" type="text/css" />
+        <link href="<?php echo e(asset('css/style.css')); ?>" media="screen" rel="stylesheet" type="text/css" />
         <?php echo $__env->yieldContent('page_css'); ?>
         
     </head>
     <body class="public">
-        <div class="purchase">
-            <div class="courses">
+            <div class="index">
+                <div class="<?php echo $__env->yieldContent('sub_class'); ?>">
                 <!-- navigation bar -->
                 <div class="navbar">
                     <div id="topnav">
@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <!-- navigation bar ends -->
-                <div id="wrapper" class="login-wrapper">
+                <div id="wrapper" class="">
 
                     <div id="header"></div>
                     <!-- end header -->
@@ -67,7 +67,7 @@
 
                 </div>
             </div>
-        </div>
+            </div>
         <!-- end wrapper -->
         <script type="text/javascript" src="<?php echo e(asset('front_assets/script/jquery.js')); ?>"></script>
         <script type="text/javascript" src="<?php echo e(asset('front_assets/script/fancybox/jquery.fancybox.js')); ?>"></script>

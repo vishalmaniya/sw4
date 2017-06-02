@@ -1,6 +1,31 @@
-@extends('layouts.default_login')
+<?php 
+if(Sentinel::check()){
+    $layout = 'layouts.default_change_password';
+}else{
+    $layout = 'layouts.default_login';
+}
+?>
+@extends($layout)
 @section('title','Available Courses')
 @section('page_css')
+@endsection
+@section('main_class','classroom-wrapper')
+@section('sub_class','purchase')
+@section('courses','courses')
+@section('header')
+<div class="title"></div>
+<div class="headerr">
+<div class="breadcrumbs"><a href="#">Dashboard</a> &nbsp;<img src="{{ asset('front_assets/images/breadcrumbs.gif') }}" alt=""> &nbsp;Welcome!</div>
+<div class="user">
+    <a href="#" class="profile"><img src="{{ asset('front_assets/profiles/default_sml.jpg') }}" alt="profile-img"></a>
+    <div class="username">
+        <a href="#">
+            march05_admin
+        </a>
+    </div>
+    <div class="points"><b>Total Points:</b> 160 points</div>
+</div>
+</div>
 @endsection
 @section('content')
 <div class="twocolwrapper">

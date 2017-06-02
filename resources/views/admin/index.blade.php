@@ -318,7 +318,7 @@
             </div>
             <!-- To do list -->
             <div class="col-lg-6 col-md-6 col-sm-6">
-                <div class="panel panel-primary todolist">
+                <div class="panel panel-default todolist">
                     <div class="panel-heading border-light">
                         <h4 class="panel-title">
                             <i class="livicon" data-name="medal" data-size="18" data-color="white" data-hc="white"

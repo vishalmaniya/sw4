@@ -28,15 +28,15 @@
 //                print_r($courses);
 //                exit;
              ?>
-            <table class="public_course_list" cellspacing="0" cellpadding="0">
+            <div class="public_course_list" cellspacing="0" cellpadding="0">
                 <tbody>
                     <?php $__currentLoopData = $courses; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $course): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <tr>
-                        <td class="col1">
+                    <div class="row">
+                        <div class="col1">
                             <a href="<?php echo e(route('courses_view',['id'=>$course->course->id,'name'=>str_replace(" ","_",strtolower($course->course->name))])); ?>"><img src="http://www.studioweb.com/uploads/<?php echo e(str_replace(" ","_",strtolower($course->course->name))); ?>/badge_sml.png" alt="<?php echo e($course->course->name); ?>">
                             </a>
-                        </td>
-                        <td>
+                        </div>
+                        <div class="col2">
                             <h3><?php echo e($course->course->name); ?> <span title="Foundation courses teach students the fundamentals of web development in HTML, CSS, PHP, and Javascript" id="<?php echo e($course->course->category->name); ?>"><?php echo e($course->course->category->name); ?></span></h3>
                             <div class="description">
                                 <?php echo $course->course->description; ?>
@@ -45,11 +45,11 @@
                             <p>
                                 <a href="<?php echo e(route('user_courses_view',['id'=>$course->course->id,'name'=>str_replace(" ","_",strtolower($course->course->name))])); ?>" class="button_green_sml">Continue Courses</a>
                             </p>
-                        </td>
-                    </tr>
+                        </div>
+                    </div>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </tbody>
-            </table>
+            </div>
           </div>
        </div>
        </div>

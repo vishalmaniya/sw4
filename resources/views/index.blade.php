@@ -5,12 +5,6 @@
 @section('content')
 <div class="fullcol">
 
-    <style type="text/css">
-        .section { padding: 30px 50px; }
-        .sectionbg { border-top: 1px solid #e2e2e2; }
-        .sectionbg form { width: 500px; display: block; margin: 10px auto 0; }
-    </style>
-
     <div class="section">
         <img src="{{ asset('front_assets/images/logo.png') }}" style="margin: 0 auto; display: block;">
     </div>
@@ -20,7 +14,9 @@
         
         <form class="formm" action="{{ route('login') }}" method="post">
             <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+			<input type="hidden" name="remember-me" value="0">
             <ul class="one">
+			
                 <li width="20"><label  class="label-size">Username</label></li>
                 <li><input type="text" name="email" id="email" maxlength="80" size="30"></li>
             </ul>
@@ -32,7 +28,7 @@
                 <li></li><label  class="label-size">Password</label></li>
                 <li></li><input type="password" name="password" id="password" size="30"></li>
             </ul>
-            <input type="hidden" name="remember-me" value="0">
+            
             <div class="error" style="display:none;">
                 <span class="error_msg">Invalid credentials.</span>
             </div>

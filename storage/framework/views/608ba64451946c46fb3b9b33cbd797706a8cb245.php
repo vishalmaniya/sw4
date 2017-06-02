@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Studio Web | <?php echo $__env->yieldContent('title'); ?></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Interactive JavaScript, PHP, HTML and CSS video training for the k-12 classroom">
         <meta name="keywords" content="web design, web training, institution, school, education, html, css, photoshop, javascript, php, php training, javascript training, html training, interactive education, online education, teachers aid, teacher, student, student aid, tutoring, online tutoring">
 
@@ -11,8 +12,7 @@
         <link rel="shortcut icon" type="image/x-icon" href="http://dev.studioweb.com/favicon.ico" />
 
         <link href="<?php echo e(asset('front_assets/css/normalize.css')); ?>" media="screen" rel="stylesheet" type="text/css" />
-        <link href="<?php echo e(asset('front_assets/css/style.css?v=1.0.15')); ?>" media="screen" rel="stylesheet" type="text/css" />
-        <link href="<?php echo e(asset('front_assets/css/responsive.css')); ?>" media="screen" rel="stylesheet" type="text/css" />
+        <link href="<?php echo e(asset('front_assets/css/style.css')); ?>" media="screen" rel="stylesheet" type="text/css" />
         <link href="<?php echo e(asset('front_assets/script/jqueryui.css')); ?>" media="screen" rel="stylesheet" type="text/css" />
         <link href="<?php echo e(asset('front_assets/script/fancybox/jquery.fancybox.css')); ?>" media="screen" rel="stylesheet" type="text/css" />
         <link href="<?php echo e(asset('front_assets/script/jquery.dataTables.min.css')); ?>" media="screen" rel="stylesheet" type="text/css" />
@@ -22,11 +22,6 @@
         <link href="http://vjs.zencdn.net/4.7/video-js.css" rel="stylesheet">
         <link href="<?php echo e(asset('front_assets/css/style1.css')); ?>" media="screen" rel="stylesheet" type="text/css" />
         <?php echo $__env->yieldContent('page_css'); ?>
-        <style>
-            .b1{
-                display: none;
-            }    
-        </style>
     </head>
     <body class="usersright users course">
         <!-- navigation bar -->
@@ -63,7 +58,7 @@
         </div>
         <!-- navigation bar ends -->
 
-        <div id="wrapper">
+        <div id="wrapper" class="login-wrapper">
             <div class="headersize">
                 <div id="header">
                     <?php echo $__env->yieldContent('header'); ?>

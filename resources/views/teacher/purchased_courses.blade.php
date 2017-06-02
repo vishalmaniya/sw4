@@ -34,7 +34,7 @@
                         @foreach($courses_to_teacher->teacher_join as $course)
                         <tr>
                             <td class="col1">
-                                <a href="{{ route('courses_view_teacher',['id'=>$course->id,'name'=>str_replace(" ","_",strtolower($course->name))]) }}"><img src="http://www.studioweb.com/uploads/{{ str_replace(" ","_",strtolower($course->name)) }}/badge_sml.png" alt="{{ $course->name }}">
+                                <a href="{{ route('teacher_courses_view',['id'=>$course->id,'name'=>str_replace(" ","_",strtolower($course->name))]) }}"><img src="http://www.studioweb.com/uploads/{{ str_replace(" ","_",strtolower($course->name)) }}/badge_sml.png" alt="{{ $course->name }}">
                                 </a>
                             </td>
                             <td>
@@ -42,7 +42,7 @@
                                 <div class="description">
                                     {!! $course->description !!}
                                 </div>
-                                <p><a href="{{ route('courses_view_teacher',['id'=>$course->id,'name'=>str_replace(" ","_",strtolower($course->name))]) }}" class="button_green_sml">Learn More</a>
+                                <p><a href="{{ route('teacher_courses_view',['id'=>$course->id,'name'=>str_replace(" ","_",strtolower($course->name))]) }}" class="button_green_sml">Learn More</a>
                                 </p>
                             </td>
                         </tr>

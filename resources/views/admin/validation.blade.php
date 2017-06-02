@@ -40,7 +40,7 @@
         <!--main content-->
         <div class="row">
             <div class="col-md-6">
-                <div class="panel panel-primary">
+                <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">
                             <i class="livicon" data-name="wrench" data-size="16" data-loop="true" data-c="#fff"

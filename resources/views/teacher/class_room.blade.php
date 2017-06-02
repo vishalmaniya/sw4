@@ -1,26 +1,31 @@
-@extends('layouts.default')
-@section('title','Login')
+@extends('layouts.default_change_password')
+@section('title','Class Room')
 @section('page_css')
 @endsection
 @section('header')
 <div class="title"></div>
 <div class="headerr">
-<div class="breadcrumbs"><a href="#">Dashboard</a> &nbsp;<img src="{{ asset('front_assets/images/breadcrumbs.gif') }}" alt=""> &nbsp;Welcome!</div>
-<div class="user">
-    <a href="#" class="profile"><img src="{{ asset('front_assets/profiles/default_sml.jpg') }}" alt="profile-img"></a>
-    <div class="username">
-        <a href="#">
-            march05_admin
-        </a>
+    <div class="breadcrumbs"><a href="#">Dashboard</a> &nbsp;<img src="{{ asset('front_assets/images/breadcrumbs.gif') }}" alt=""> &nbsp;Welcome!</div>
+    <div class="user">
+        <a href="#" class="profile"><img src="{{ asset('front_assets/profiles/default_sml.jpg') }}" alt="profile-img"></a>
+        <div class="username">
+            <a href="#">
+                march05_admin
+            </a>
+        </div>
+        <div class="points"><b>Total Points:</b> 160 points</div>
     </div>
-    <div class="points"><b>Total Points:</b> 160 points</div>
-</div>
 </div>
 @endsection
+@section('main_class','users course')
+@section('sub_class','classroom-wrapper')
 @section('content')
 <div class="fullcol">
     <div class="section" id="classroom">
         <span id="class">
+            <style type="text/css">
+                #class select {width: 350px;border: 1px solid #DCD8D8;padding: 6px;outline: none; margin: -4px 0px 0px 30px;}
+            </style>
             Classroom
             <form action="#">
                 <select name="classes" id="classes">
@@ -35,14 +40,24 @@
         <div id="stats" style="display: block;">
 
 
-            <div id="tabs">
-                <ul>
-                    <li><a href="#today">Today's Stats</a></li>
-                    <li><a id="general_link" href="#general">General Stats</a></li>
-                    <li><a href="#details">Detailed Stats</a></li>
-                    <li><a href="#certification">Certification</a></li>
-                    <li><a href="#admin">Admin Functions</a></li>
+            <div id="tabs" id="navi" class="activemenu">
+                <ul class="activa">
+                    <li><a class="submenu-active menuu activee" href="#today"><q>Today's Stats</q></a></li>
+                    <li><a class="menuu" id="general_link" href="#general"><q>General Stats</q></a></li>
+                    <li><a class="menuu" href="#details"><q>Detailed Stats</q></a></li>
+                    <li><a class="menuu" href="#certification"><q>Certification</q></a></li>
+                    <li><a class="menuu" href="#admin"><q>Admin Functions</q></a></li>
                 </ul>
+
+                <script>
+                    $(document).ready(function () {
+                        $('ul li a').click(function () {
+                            $('li a').removeClass("activee");
+                            $(this).addClass("activee");
+                        });
+                    });
+                </script>
+
                 <div id="today">
                     <div class="row">
                         <div class="col">
@@ -64,8 +79,8 @@
                         <h4 style="padding-top: 20px; padding-left: 20px;">No questions have been answered today!</h4>
                     </div>
                 </div>
-                <div id="general">
-                    <h4 id="legend_link"><img src="http://dev.studioweb.com/resources/images/icon-plus-green.png"> <a href="#">Legend (click to view legend)</a></h4>
+                <div id="general" class="generall">
+                    <h4 id="legend_link"><img class="dev-img-2" src="http://dev.studioweb.com/resources/images/icon-plus-green.png"> <a href="#">Legend (click to view legend)</a></h4>
                     <div id="legend">
                         <p>
                             <span class="in_progress">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> = Course INCOMPLETE. The number displayed indicates the percentage of the course completed.
@@ -83,195 +98,195 @@
                         <br><br>
                     </div>
                     <div id="classroom_loader" style="text-align: center;display:none">
-                        <h3><img src="http://dev.studioweb.com//resources/images/ajax_loading_green.gif"></h3>
+                        <h3><img class="dev-img" src="http://dev.studioweb.com//resources/images/ajax_loading_green.gif"></h3>
                         <h3>Generating General Stats</h3>
                     </div>
                     <div id="classroom_table">
 
-
-                        <table class="classroom_table" class="list">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th><a href="course_stats.html" title="Beginners HTML 2015"><img style="width: 40px;" src="http://www.studioweb.com/uploads/beginners_html_2015/badge_sml.png"></a></th>
-                                    <th><a href="course_stats.html" title="Beginners CSS 2015"><img style="width: 40px;" src="http://www.studioweb.com/uploads/beginners_css_2015/badge_sml.png"></a></th>
-                                    <th><a href="course_stats.html" title="Powerful Python 3"><img style="width: 40px;" src="http://www.studioweb.com/uploads/powerful_python_3/badge_sml.png"></a></th>
-                                    <th><a href="course_stats.html" title="Form Validation with PHP and Javascript"><img style="width: 40px;" src="http://www.studioweb.com/uploads/form_validation_with_php_and_javascript/badge_sml.png"></a></th>
-                                    <th><a href="course_stats.html" title="HTML5 Exam"><img style="width: 40px;" src="http://www.studioweb.com/uploads/html5_exam/badge_sml.png"></a></th>
-                                    <th><a href="course_stats.html" title="Test Course"><img style="width: 40px;" src="http://www.studioweb.com/uploads/test_course/badge_sml.png"></a></th>
-                                    <th><a href="course_stats.html" title="EXAM TEST MARCH"><img style="width: 40px;" src="http://www.studioweb.com/uploads/exam_test_march/badge_sml.png"></a></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><a href="student_detail.html">march05_7929</a></td>
-                                    <td>Stefan Mischook</td>
-                                    <td class="in_progress"><a href="student_detail.html">25%</a></td>
-                                    <td>-</td>
-                                    <td class="complete"><a href="student_detail.html">96%</a></td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td class="complete"><a href="student_detail.html">92%</a></td>
-                                    <td class="complete"><a href="student_detail.html">95%</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a href="http://dev.studioweb.com/classroom/student_details/179">march05_8497</a></td>
-                                    <td>Chiefan Bug Fighter 5</td>
-                                    <td class="in_progress"><a href="http://dev.studioweb.com/classroom/student_details/179">7%</a></td>
-                                    <td>-</td>
-                                    <td class="in_progress"><a href="http://dev.studioweb.com/classroom/student_details/179">90%</a></td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="http://dev.studioweb.com/classroom/student_details/180">march05_7734</a></td>
-                                    <td>Ivan the BugFinder 3</td>
-                                    <td class="in_progress"><a href="http://dev.studioweb.com/classroom/student_details/180">2%</a></td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="http://dev.studioweb.com/classroom/student_details/181">march05_4344</a></td>
-                                    <td>Jimmy BugFinder</td>
-                                    <td class="in_progress"><a href="http://dev.studioweb.com/classroom/student_details/181">2%</a></td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="http://dev.studioweb.com/classroom/student_details/182">march05_8407</a></td>
-                                    <td>Samatha BugFinder 2</td>
-                                    <td class="in_progress"><a href="http://dev.studioweb.com/classroom/student_details/182">1%</a></td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="http://dev.studioweb.com/classroom/student_details/183">march05_6495</a></td>
-                                    <td></td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="http://dev.studioweb.com/classroom/student_details/184">march05_7562</a></td>
-                                    <td></td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="http://dev.studioweb.com/classroom/student_details/185">march05_6463</a></td>
-                                    <td></td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="http://dev.studioweb.com/classroom/student_details/186">march05_5147</a></td>
-                                    <td></td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="http://dev.studioweb.com/classroom/student_details/187">march05_6643</a></td>
-                                    <td></td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="http://dev.studioweb.com/classroom/student_details/291">march05_8524</a></td>
-                                    <td></td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="http://dev.studioweb.com/classroom/student_details/292">march05_7923</a></td>
-                                    <td></td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="http://dev.studioweb.com/classroom/student_details/293">march05_5408</a></td>
-                                    <td></td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="http://dev.studioweb.com/classroom/student_details/294">march05_5958</a></td>
-                                    <td></td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="http://dev.studioweb.com/classroom/student_details/295">march05_3087</a></td>
-                                    <td></td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
+                        <div class="table-responsive">
+                            <table class="classroom_table table" class="list">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th><a href="course_stats.html" title="Beginners HTML 2015"><img class="img-one" style="width: 40px;" src="http://www.studioweb.com/uploads/beginners_html_2015/badge_sml.png"></a></th>
+                                        <th><a href="course_stats.html" title="Beginners CSS 2015"><img class="img-one" style="width: 40px;" src="http://www.studioweb.com/uploads/beginners_css_2015/badge_sml.png"></a></th>
+                                        <th><a href="course_stats.html" title="Powerful Python 3"><img class="img-one" style="width: 40px;" src="http://www.studioweb.com/uploads/powerful_python_3/badge_sml.png"></a></th>
+                                        <th><a href="course_stats.html" title="Form Validation with PHP and Javascript"><img class="img-one" style="width: 40px;" src="http://www.studioweb.com/uploads/form_validation_with_php_and_javascript/badge_sml.png"></a></th>
+                                        <th><a href="course_stats.html" title="HTML5 Exam"><img class="img-one" style="width: 40px;" src="http://www.studioweb.com/uploads/html5_exam/badge_sml.png"></a></th>
+                                        <th><a href="course_stats.html" title="Test Course"><img class="img-one" style="width: 40px;" src="http://www.studioweb.com/uploads/test_course/badge_sml.png"></a></th>
+                                        <th><a href="course_stats.html" title="EXAM TEST MARCH"><img class="img-one" style="width: 40px;" src="http://www.studioweb.com/uploads/exam_test_march/badge_sml.png"></a></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="student_detail.html">march05_7929</a></td>
+                                        <td>Stefan Mischook</td>
+                                        <td class="in_progress"><a href="student_detail.html">25%</a></td>
+                                        <td>-</td>
+                                        <td class="complete"><a href="student_detail.html">96%</a></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td class="complete"><a href="student_detail.html">92%</a></td>
+                                        <td class="complete"><a href="student_detail.html">95%</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="http://dev.studioweb.com/classroom/student_details/179">march05_8497</a></td>
+                                        <td>Chiefan Bug Fighter 5</td>
+                                        <td class="in_progress"><a href="http://dev.studioweb.com/classroom/student_details/179">7%</a></td>
+                                        <td>-</td>
+                                        <td class="in_progress"><a href="http://dev.studioweb.com/classroom/student_details/179">90%</a></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="http://dev.studioweb.com/classroom/student_details/180">march05_7734</a></td>
+                                        <td>Ivan the BugFinder 3</td>
+                                        <td class="in_progress"><a href="http://dev.studioweb.com/classroom/student_details/180">2%</a></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="http://dev.studioweb.com/classroom/student_details/181">march05_4344</a></td>
+                                        <td>Jimmy BugFinder</td>
+                                        <td class="in_progress"><a href="http://dev.studioweb.com/classroom/student_details/181">2%</a></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="http://dev.studioweb.com/classroom/student_details/182">march05_8407</a></td>
+                                        <td>Samatha BugFinder 2</td>
+                                        <td class="in_progress"><a href="http://dev.studioweb.com/classroom/student_details/182">1%</a></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="http://dev.studioweb.com/classroom/student_details/183">march05_6495</a></td>
+                                        <td></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="http://dev.studioweb.com/classroom/student_details/184">march05_7562</a></td>
+                                        <td></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="http://dev.studioweb.com/classroom/student_details/185">march05_6463</a></td>
+                                        <td></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="http://dev.studioweb.com/classroom/student_details/186">march05_5147</a></td>
+                                        <td></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="http://dev.studioweb.com/classroom/student_details/187">march05_6643</a></td>
+                                        <td></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="http://dev.studioweb.com/classroom/student_details/291">march05_8524</a></td>
+                                        <td></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="http://dev.studioweb.com/classroom/student_details/292">march05_7923</a></td>
+                                        <td></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="http://dev.studioweb.com/classroom/student_details/293">march05_5408</a></td>
+                                        <td></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="http://dev.studioweb.com/classroom/student_details/294">march05_5958</a></td>
+                                        <td></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="http://dev.studioweb.com/classroom/student_details/295">march05_3087</a></td>
+                                        <td></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
                     </div>
                 </div>
@@ -311,7 +326,7 @@
 
 
                     <div id="exam_access">
-                        <div class="section">
+                        <div class="section-again">
                             <h3>Student Certification/Exam Access</h3>
                             <p>You can grant students access to StudioWeb exams. We suggest that students should have completed the corresponding course before attempting the exam.</p>
                             <div class="row">
@@ -328,8 +343,20 @@
                                 </div>
                                 <div class="col">
                                     <h4>Students Without Access</h4>
+                                    <button id="showdetailbtn">Click To show detail</button>
+
+
+                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                                    <script>
+                    $(document).ready(function () {
+                        $("#showdetailbtn").click(function () {
+                            $("#showdetail").fadeToggle(1000);
+                        });
+                    });
+                                    </script>
+
                                     <form action="http://dev.studioweb.com/users/classroom/grant_student_certification_access/59" class="cert_form">
-                                        <ul>
+                                        <ul id="showdetail">
                                             <li><input type="checkbox" class="students" name="student[]" value="179"> march05_8497 - Chiefan Bug Fighter 5</li>
                                             <li><input type="checkbox" class="students" name="student[]" value="180"> march05_7734 - Ivan the BugFinder 3</li>
                                             <li><input type="checkbox" class="students" name="student[]" value="181"> march05_4344 - Jimmy BugFinder</li>
@@ -364,8 +391,20 @@
                                 </div>
                                 <div class="col">
                                     <h4>Students Without Access</h4>
+                                    <button id="showdetailbtnn">Click To show detail</button>
+
+                                    <script>
+                                        $(document).ready(function () {
+                                            $("#showdetailbtnn").click(function () {
+                                                $("#showdetaill").fadeToggle(1000);
+                                            });
+                                        });
+                                    </script>
+
+
+
                                     <form action="http://dev.studioweb.com/users/classroom/grant_student_certification_access/65" class="cert_form">
-                                        <ul>
+                                        <ul id="showdetaill">
                                             <li><input type="checkbox" class="students" name="student[]" value="178"> march05_7929 - Stefan Mischook</li>
                                             <li><input type="checkbox" class="students" name="student[]" value="179"> march05_8497 - Chiefan Bug Fighter 5</li>
                                             <li><input type="checkbox" class="students" name="student[]" value="180"> march05_7734 - Ivan the BugFinder 3</li>
@@ -406,22 +445,36 @@
                     </div>
                     <div>
                         <h3>Class List</h3>
+                        <button id="showbbtn">Click to show detail</button>
+
+                        <script>
+                            $(document).ready(function () {
+                                $("#showbbtn").click(function () {
+                                    $("#showdetaills").fadeToggle(1000);
+                                });
+                            });
+                        </script>
+
                         <p>Select, copy, and paste your class list for your records</p>
-                        <textarea style="height: 510px;" onclick="this.focus();this.select()" readonly="readonly">march05_7929
-                            march05_8497
-                            march05_7734
-                            march05_4344
-                            march05_8407
-                            march05_6495
-                            march05_7562
-                            march05_6463
-                            march05_5147
-                            march05_6643
-                            march05_8524
-                            march05_7923
-                            march05_5408
-                            march05_5958
-                            march05_3087
+                        <style type="text/css">
+                            #showdetaills{height: 510px;}
+
+                        </style>
+                        <textarea id="showdetaills" onclick="this.focus();this.select()" readonly="readonly">         march05_7929
+                        march05_8497
+                        march05_7734
+                        march05_4344
+                        march05_8407
+                        march05_6495
+                        march05_7562
+                        march05_6463
+                        march05_5147
+                        march05_6643
+                        march05_8524
+                        march05_7923
+                        march05_5408
+                        march05_5958
+                        march05_3087
                         </textarea>
                     </div>
                 </div>

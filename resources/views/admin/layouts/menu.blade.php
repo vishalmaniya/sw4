@@ -20,6 +20,28 @@
         </li>
     </ul>
 </li>
+<li {!! (Request::is('admin/classroom') || Request::is('admin/classroom/create') || Request::is('admin/classroom/*') ? 'class="active"' : '') !!}>
+    <a href="#">
+        <i class="livicon" data-name="thumbnails-small" data-size="18" data-c="#67C5DF" data-hc="#67C5DF"
+           data-loop="true"></i>
+        <span class="title">Classroom</span>
+        <span class="fa arrow"></span>
+    </a>
+    <ul class="sub-menu">
+        <li {!! (Request::is('admin/classroom') ? 'class="active" id="active"' : '') !!}>
+            <a href="{{ URL::to('admin/classroom') }}">
+                <i class="fa fa-angle-double-right"></i>
+                Classroom
+            </a>
+        </li>
+        <li {!! (Request::is('admin/classroom/create') ? 'class="active" id="active"' : '') !!}>
+            <a href="{{ URL::to('admin/classroom/create') }}">
+                <i class="fa fa-angle-double-right"></i>
+                Add New Classroom
+            </a>
+        </li>
+    </ul>
+</li>
 <li {!! (Request::is('admin/courses') || Request::is('admin/courses/create') || Request::is('admin/courses/*') ? 'class="active"' : '') !!}>
     <a href="#">
         <i class="livicon" data-name="archive-extract" data-size="18" data-c="#F89A14" data-hc="#F89A14"

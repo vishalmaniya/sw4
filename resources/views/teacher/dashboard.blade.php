@@ -17,20 +17,20 @@
         <div class="leftcol11">
        <div class="leftcol">
           <div class="section">
-             <h1>Dashboard:</h1>
+             <h1>Dashboard</h1>
           </div>
           <div class="sectionbg">
 <!--             <ul class="alerts">
                 <li class="alert_error">Your Subscription has expired. To renew your subscription, please <a href="support.html">contact us</a></li>
              </ul>-->
              <h2 style="margin-top:0;">Your Courses:</h2>
-             <table cellpadding="0" cellspacing="0" class="public_course_list">
+             <div cellpadding="0" cellspacing="0" class="public_course_list">
                  @foreach($courses as $course)
-                <tr>
-                   <td class="col1">
+                 <div class="row">
+                   <div class="col1">
                       <a href="#"><img src="http://www.studioweb.com/uploads/{{ str_replace(" ","_",strtolower($course->course->name)) }}/badge_sml.png"></a>
-                   </td>
-                   <td>
+                   </div>
+                   <div class="col2">
                       <h3>{{ $course->course->name }} <span id="{{ $course->course->category->name }}">{{ $course->course->category->name }}</span></h3>
                       <div class="description">
                           <p id="course_description">
@@ -41,7 +41,7 @@
                          <a href="{{ route('teacher_courses_view',['id'=>$course->course->id,'name'=>str_replace(" ","_",strtolower($course->course->name))]) }}" class="button_green_sml">Review Course Material</a>
                       </p>
                       @if(!empty($course->course->source))
-                      <p style="margin-top: 30px;">
+                      <p class="left-wrap" style="margin-top: 30px;">
                          <a href="http://www.studioweb.com/uploads/{{ str_replace(" ","_",strtolower($course->course->name)) }}/{{ $course->course->source }}">
                          <img style="padding-right: 10px; vertical-align: middle; height: 32px;" src="{{ asset('front_assets/images/icon-sourcefiles.png') }}">Course Documents</a>
                          (Eyes Only)
@@ -52,10 +52,10 @@
                          <img style="padding-right: 10px; vertical-align: middle; height: 32px;" src="{{ asset('front_assets/images/icon-list-mini.png') }}">View Answer Book</a>
                          (Eyes Only)
                       </p>
-                   </td>
-                </tr>
+                   </div>
+                </div>
                 @endforeach
-             </table>
+             </div>
           </div>
        </div>
        </div>

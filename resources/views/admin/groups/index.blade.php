@@ -26,7 +26,7 @@
 <section class="content">
     <div class="row">
         <div class="col-lg-12">
-            <div class="panel panel-primary ">
+            <div class="panel panel-default ">
                 <div class="panel-heading clearfix">
                     <h4 class="panel-title pull-left"> <i class="livicon" data-name="users" data-size="16" data-loop="true" data-c="#fff" data-hc="white"></i>
                         @lang('groups/title.groupslist')

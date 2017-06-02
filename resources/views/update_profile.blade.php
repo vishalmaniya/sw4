@@ -4,6 +4,7 @@
 @endsection
 @section('header')
 <div class="title"></div>
+<div class="headerr">
 <div class="breadcrumbs"><a href="#">Dashboard</a> &nbsp;<img src="{{ asset('front_assets/images/breadcrumbs.gif') }}" alt=""> &nbsp;Welcome!</div>
 <div class="user">
     <a href="#" class="profile"><img src="{{ asset('front_assets/profiles/default_sml.jpg') }}" alt="profile-img"></a>
@@ -14,6 +15,7 @@
     </div>
     <div class="points"><b>Total Points:</b> 160 points</div>
 </div>
+</div>
 @endsection
 @section('content')
 <div class="twocolwrapper">
@@ -22,7 +24,7 @@
             <div class="section">
                 <h1>Update Profile:</h1>
             </div>
-            <div class="sectionbg">
+            <div class="reminder-again">
                 <!-- Notifications -->
                 @include('notifications')
 <!--                <ul class="alerts"><li class="alert_error">The Email field is required.</li>
@@ -46,7 +48,7 @@
                         <div class="lastrow">
                             <label for="userfile" class="nomargin">Upload new image:</label>
                             <input type="file" name="userfile" size="60" />
-                            <p style="padding-left:160px; font-size: 11px;"><i><b>Please note:</b> For best results, your profile picture needs to be a square JPG, GIF or PNG larger than 200 x 200 pixels.</i></p>
+                            <p style="font-size: 11px;"><i><b>Please note:</b> For best results, your profile picture needs to be a square JPG, GIF or PNG larger than 200 x 200 pixels.</i></p>
                         </div>
                         <div class="submitrow">
                             <input type="submit" name="submit" value="Update Profile" class="button_green" />

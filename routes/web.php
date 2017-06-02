@@ -79,7 +79,7 @@ Route::group(['middleware' => 'web'], function () {
             Route::get('create', 'UsersController@create');
             Route::get('edit/{user}',array('as'=>'admin.users.edit' ,'uses'=>'UsersController@edit'));
             Route::put('update',array('as'=>'admin.users.store' ,'uses'=>'UsersController@update'));
-            Route::put('update',array('as'=>'admin.users.update' ,'uses'=>'UsersController@update_change'));
+            Route::put('update_user',array('as'=>'admin.users.update' ,'uses'=>'UsersController@update_change'));
 
             Route::post('create', 'UsersController@store');
             Route::get('{userId}/delete', array('as' => 'delete/user', 'uses' => 'UsersController@destroy'));
@@ -95,6 +95,7 @@ Route::group(['middleware' => 'web'], function () {
         Route::resource('lession', 'LessionController');
         Route::resource('questions', 'QuestionsController');
         Route::resource('contact', 'ContactController');
+        Route::resource('classroom','ClassroomController');
         
         Route::post('onchange_course',array('as'=>'change_course','uses'=>'LessionController@onchange_course'));
         
@@ -137,7 +138,7 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('teacher-dashboard', array('as' => 'teacher.dashboard','uses' => 'FrontEndController@teacher_dashboard'));
         
         #purchase courses
-        Route::get('purchased-courses',array('as'=>'purchased_courses','uses'=>'FrontEndController@getPurchased_courses'));
+        Route::get('purchased-courses',array('as'=>'purchased_courses','uses'=>'FrontEndController@getCourses'));
         Route::get('teacher/courses/{id}/{name}',array('as'=>'teacher_courses_view','uses'=>'FrontEndController@teacher_courses_preview'));
         
         #change-password, update-profile
