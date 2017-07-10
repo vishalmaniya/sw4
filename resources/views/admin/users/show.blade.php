@@ -47,119 +47,63 @@ View User Details
                             <i class="livicon" data-name="key" data-size="16" data-loop="true" data-c="#000" data-hc="#000"></i>
                             Change Password</a>
                     </li>
-                    <li>
-                        <a href="{{ URL::to('admin/user_profile') }}" >
-                            <i class="livicon" data-name="gift" data-size="16" data-loop="true" data-c="#000" data-hc="#000"></i>
-                            Advanced User Profile</a>
-                    </li>
-
                 </ul>
                 <div  class="tab-content mar-top">
                     <div id="tab1" class="tab-pane fade active in">
                         <div class="row">
-                            <div class="col-lg-12">
-                                <div class="panel">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title">
+                            <div class="panel" style="border-left: 1px solid #ddd;padding-top: 30px;">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        User Profile
+                                    </h3>
 
-                                            User Profile
-                                        </h3>
+                                </div>
 
-                                    </div>
+                                <div class="panel-body">
 
-                                    <div class="panel-body">
-                                        <div class="col-md-4">
-                                            <div class="img-file">
-                                                @if($user->pic)
-                                                    <img src="{!! url('/').'/uploads/users/'.$user->pic !!}" alt="profile pic" class="img-max">
-                                                @else
-                                                    <img src="http://placehold.it/200x200" alt="profile pic">
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="panel-body">
-                                                <div class="table-responsive">
-                                                    <table class="table table-bordered table-striped" id="users">
+                                    <div class="col-md-8">
+                                        <div class="panel-body">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered table-striped" id="users">
 
-                                                        <tr>
-                                                            <td>@lang('users/title.name')</td>
-                                                            <td>
-                                                                {{ $user->name }}
-                                                            </td>
+                                                    <tr>
+                                                        <td>Username</td>
+                                                        <td>
+                                                            {{ $user->user_name }}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Name</td>
+                                                        <td>
+                                                            {{ $user->name }}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>@lang('users/title.email')</td>
+                                                        <td>
+                                                            {{ $user->email }}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>@lang('users/title.status')</td>
+                                                        <td>
 
-                                                        </tr>
-                                                        <tr>
-                                                            <td>@lang('users/title.email')</td>
-                                                            <td>
-                                                                {{ $user->email }}
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                @lang('users/title.gender')
-                                                            </td>
-                                                            <td>
-                                                                {{ $user->gender }}
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>@lang('users/title.dob')</td>
-                                                            <td>
-                                                                {{ $user->dob }}
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>@lang('users/title.country')</td>
-                                                            <td>
-                                                                {{ $user->country }}
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>@lang('users/title.state')</td>
-                                                            <td>
-                                                                {{ $user->state }}
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>@lang('users/title.city')</td>
-                                                            <td>
-                                                                {{ $user->city }}
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>@lang('users/title.address')</td>
-                                                            <td>
-                                                                {{ $user->address }}
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>@lang('users/title.postal')</td>
-                                                            <td>
-                                                                {{ $user->postal }}
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>@lang('users/title.status')</td>
-                                                            <td>
-
-                                                                @if($user->deleted_at)
-                                                                    Deleted
-                                                                @elseif($activation = Activation::completed($user))
-                                                                    Activated
-                                                                @else
-                                                                    Pending
-                                                                @endif
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>@lang('users/title.created_at')</td>
-                                                            <td>
-                                                                {!! $user->created_at->diffForHumans() !!}
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </div>
+                                                            @if($user->deleted_at)
+                                                                Deleted
+                                                            @elseif($activation = Activation::completed($user))
+                                                                Activated
+                                                            @else
+                                                                Pending
+                                                            @endif
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>@lang('users/title.created_at')</td>
+                                                        <td>
+                                                            {!! $user->created_at->diffForHumans() !!}
+                                                        </td>
+                                                    </tr>
+                                                </table>
                                             </div>
                                         </div>
                                     </div>
@@ -170,50 +114,58 @@ View User Details
 
                     <div id="tab2" class="tab-pane fade">
                         <div class="row">
-                            <div class="col-md-12 pd-top">
-                                <form class="form-horizontal">
-                                    <div class="form-body">
-                                        <div class="form-group">
-                                            <label for="inputpassword" class="col-md-3 control-label">
-                                                Password
-                                                <span class='require'>*</span>
-                                            </label>
-                                            <div class="col-md-9">
-                                                <div class="input-group">
-                                                            <span class="input-group-addon">
-                                                                <i class="livicon" data-name="key" data-size="16" data-loop="true" data-c="#000" data-hc="#000"></i>
-                                                            </span>
-                                                    <input type="password" id="password" placeholder="Password"
-                                                           class="form-control"/>
+                            <div class="panel" style="border-left: 1px solid #ddd;padding-top: 30px;">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        Change Password
+                                    </h3>
+
+                                </div>
+                                <div class="panel-body">
+                                    <form class="form-horizontal">
+                                        <div class="form-body">
+                                            <div class="form-group">
+                                                <label for="inputpassword" class="col-md-3 control-label">
+                                                    Password
+                                                    <span class='require'>*</span>
+                                                </label>
+                                                <div class="col-md-9">
+                                                    <div class="input-group">
+                                                                <span class="input-group-addon">
+                                                                    <i class="livicon" data-name="key" data-size="16" data-loop="true" data-c="#000" data-hc="#000"></i>
+                                                                </span>
+                                                        <input type="password" id="password" placeholder="Password"
+                                                               class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputnumber" class="col-md-3 control-label">
+                                                    Confirm Password
+                                                    <span class='require'>*</span>
+                                                </label>
+                                                <div class="col-md-9">
+                                                    <div class="input-group">
+                                                                <span class="input-group-addon">
+                                                                    <i class="livicon" data-name="key" data-size="16" data-loop="true" data-c="#000" data-hc="#000"></i>
+                                                                </span>
+                                                        <input type="password" id="password-confirm" placeholder="Password"
+                                                               class="form-control"/>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="inputnumber" class="col-md-3 control-label">
-                                                Confirm Password
-                                                <span class='require'>*</span>
-                                            </label>
-                                            <div class="col-md-9">
-                                                <div class="input-group">
-                                                            <span class="input-group-addon">
-                                                                <i class="livicon" data-name="key" data-size="16" data-loop="true" data-c="#000" data-hc="#000"></i>
-                                                            </span>
-                                                    <input type="password" id="password-confirm" placeholder="Password"
-                                                           class="form-control"/>
-                                                </div>
-                                            </div>
+                                        <div class="form-actions">
+                                            <div class="col-md-offset-3 col-md-9">
+                                                <button type="submit" class="btn btn-primary" id="change-password">Submit
+                                                </button>
+                                                &nbsp;
+                                                <button type="button" class="btn btn-danger">Cancel</button>
+                                                &nbsp;
+                                                <input type="reset" class="btn btn-default hidden-xs" value="Reset"></div>
                                         </div>
-                                    </div>
-                                    <div class="form-actions">
-                                        <div class="col-md-offset-3 col-md-9">
-                                            <button type="submit" class="btn btn-primary" id="change-password">Submit
-                                            </button>
-                                            &nbsp;
-                                            <button type="button" class="btn btn-danger">Cancel</button>
-                                            &nbsp;
-                                            <input type="reset" class="btn btn-default hidden-xs" value="Reset"></div>
-                                    </div>
-                                </form>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>

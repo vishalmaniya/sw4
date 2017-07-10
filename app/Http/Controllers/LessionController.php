@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Lession;
 use App\Courses;
 use App\Chapters;
+use App\DataTables\LessionDataTables;
 use Illuminate\Http\Request;
 
 use Redirect;
@@ -17,10 +18,11 @@ class LessionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(LessionDataTables $dataTable)
     {
-        $lessions = Lession::with('chapter')->get();
-        return view('admin.lession.index', compact('lessions'));
+//        $lessions = Lession::with('chapter')->get();
+//        return view('admin.lession.index', compact('lessions'));
+        return $dataTable->render('admin.lession.index');
     }
 
     /**

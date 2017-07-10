@@ -8,6 +8,7 @@ use App\CoursesToTeacher;
 use Illuminate\Http\Request;
 use Sentinel;
 
+use App\DataTables\CourseDataTables;
 use DB;
 use Redirect;
 use Validator;
@@ -19,10 +20,9 @@ class CoursesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(CourseDataTables $dataTable)
     {
-        $courses = Courses::with('category')->get();
-        return view('admin.courses.index',compact('courses'));
+        return $dataTable->render('admin.courses.index');
     }
 
     /**

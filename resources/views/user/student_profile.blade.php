@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.default_change_password')
 @section('title','Login')
 @section('page_css')
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -6,11 +6,30 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="{{ asset('front_assets/script/jquery.js') }}"></script>
+<style>
+@media screen and (max-width: 768px) and (min-width: 110px)
+{
+#topnav .inner {
+    width: 90%;
+}
+#topnav ul li{
+width:100%
+}
+}
+@media screen and (max-width: 540px) and (min-width: 110px)
+{
+#content {
+    width: 100%;
+    background-size: 100%;
+    padding-top: 100px;
+}}
+</style>
 @endsection
+@section('main_class','users course')
+@section('sub_class','users-profile-action')
 @section('header')
 <div class="title"></div>
 <div class="headerr">
-<div class="breadcrumbs"><a href="#">Dashboard</a> &nbsp;<img src="{{ asset('front_assets/images/breadcrumbs.gif') }}" alt=""> &nbsp;Welcome!</div>
 <div class="user">
     <a href="#" class="profile"><img src="{{ asset('front_assets/profiles/default_sml.jpg') }}" alt="profile-img"></a>
     <div class="username">
@@ -18,14 +37,14 @@
             march05_admin
         </a>
     </div>
-    <div class="points"><b>Total Points:</b> 160 points</div>
+    <div class="points"><b>Total Points:</b> 160</div>
 </div>
 </div>
 @endsection
 @section('content')
 <div class="twocolwrapper">
          <div class="twocol">
-             <div class="leftcol11">
+
             <div class="leftcol">
                <div class="section_profile">
                   <div class="section_profile_left">
@@ -156,7 +175,7 @@
                   </table>
                </div>
             </div>
-            </div>
+
             <div class="rightcol">
                <h4>Scoring:</h4>
                <div class="totalpoints">

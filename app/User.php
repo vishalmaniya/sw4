@@ -14,7 +14,7 @@ class User extends EloquentUser {
 	protected $table = 'users';
         public $primaryKey = 'id';
         public $incrementing = false;
-
+        protected $loginNames = ['user_name'];
 	/**
 	 * The attributes excluded from the model's JSON form.
 	 *
@@ -29,24 +29,7 @@ class User extends EloquentUser {
 
     protected $dates = ['deleted_at'];
     
-    public static function boot()
-    {
-        parent::boot();
-
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        $charactersLength = strlen($characters);
-        $randomString = '';
-        for ($i = 0; $i < 6; $i++) {
-            $randomString .= $characters[rand(0, $charactersLength - 1)];
-        }
-        $time = time();
-        $split = str_split($randomString,3);
-        $sring = $split[0].$time.$split[1];
-
-        static::creating(function ($value)use($sring) {
-            $value->id = $sring;
-        });
-    }
+    
     
     public function teacher_join(){
         return $this->belongsToMany('App\Courses','teacher_score','users_id','courses_id')->with('category','chapter');
@@ -57,5 +40,9 @@ class User extends EloquentUser {
     
     public function user_course(){
         return $this->hasMany('App\UserScore','user_id','id')->with('course');
+    }
+    
+    public function role(){
+    	return $this->belongsToMany('App\Roles','role_users','role_id','user_id');
     }
 }

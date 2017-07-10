@@ -2,6 +2,7 @@
 
 use App\Http\Requests\UserRequest;
 use App\User;
+use App\District;
 use Cartalyst\Sentinel\Laravel\Facades\Activation;
 use File;
 use Hash;
@@ -13,6 +14,9 @@ use Sentinel;
 use URL;
 use View;
 
+use App\DataTables\UserDataTables;
+use App\DataTables\SchoolDataTables;
+
 class UsersController extends JoshController
 {
 
@@ -21,13 +25,20 @@ class UsersController extends JoshController
      *
      * @return View
      */
-    public function index()
+    public function index(UserDataTables $dataTable)
     {
+    	
         // Grab get the users
-        $users = User::All();
+        //$users = User::with('roles')->get();
 
         // Show the page
-        return View('admin.users.index', compact('users'));
+        //return View('admin.users.index', compact('users'));
+        
+        return $dataTable->render('admin.users.index');
+    }
+    
+    public function school_list(SchoolDataTables $dataTable){
+        return $dataTable->render('admin.school.index');
     }
 
     /**
@@ -39,10 +50,10 @@ class UsersController extends JoshController
     {
         // Get get the available groups
         $groups = Sentinel::getRoleRepository()->get();
-
-        $countries = $this->countries;
+        
+        $district = District::all();
         // Show the page
-        return View('admin/users/create', compact('groups', 'countries'));
+        return View('admin/users/create', compact('groups', 'district'));
     }
 
     /**
@@ -80,7 +91,7 @@ class UsersController extends JoshController
                 $data = array(
                     'user' => $user,
                     'activationUrl' => URL::route('activate', [$user->id, Activation::create($user)->code]),
-                );
+                    );
 
                 // Send the activation code through email
                 Mail::send('emails.register-activate', $data, function ($m) use ($user) {
@@ -136,201 +147,64 @@ class UsersController extends JoshController
      */
     public function update(User $user, Request $request)
     {
-        try {
+        try 
+        {
+            $user->id = $this->get_primary_key('users');
             $user->name = $request->input('name');
-            $user->last_name = $request->input('last_name');
-            $user->email = $request->input('email');
-            $user->dob = $request->input('dob');
-            $user->bio = $request->input('bio');
-            $user->gender = $request->input('gender');
-            $user->country = $request->input('country');
-            $user->state = $request->input('state');
-            $user->city = $request->input('city');
-            $user->address = $request->input('address');
-            $user->postal = $request->input('postal');
-
+            $user->user_name = $request->input('username');
+            $user->state = $request->input('district');
             if ($password = $request->has('password')) {
                 $user->password = Hash::make($password);
             }
-
-
-            // is new image uploaded?
-            if ($file = $request->file('pic')) {
-                $extension = $file->getClientOriginalExtension() ?: 'png';
-                $folderName = '/uploads/users/';
-                $destinationPath = public_path() . $folderName;
-                $safeName = str_random(10) . '.' . $extension;
-                $file->move($destinationPath, $safeName);
-                //delete old pic if exists
-                if (File::exists(public_path() . $folderName . $user->pic)) {
-                    File::delete(public_path() . $folderName . $user->pic);
-                }
-
-                //save new file path into db
-                $user->pic = $safeName;
-
-            }
-
-            //save record
-            $user->save();
-            
-            //add user to 'User' group
-            $role = Sentinel::findRoleById($request->input('group'));
+            //$user->save();
+            //add user to 'School' group
+            $role = Sentinel::findRoleByName('School');
             if ($role) {
                 $role->users()->attach($user);
             }
-            
             // Activate / De-activate user
-            $status = $activation = Activation::completed($user);
-            if ($request->input('activate') != $status) {
-                if ($request->input('activate')) {
-                    $activation = Activation::exists($user);
-                    if ($activation) {
-                        Activation::complete($user, $activation->code);
-                    }
-                } else {
-                    //remove existing activation record
-                    Activation::remove($user);
-                    //add new record
-                    Activation::create($user);
-
-                    //send activation mail
-                    $data = array(
-                        'user' => $user,
-                        'activationUrl' => URL::route('activate', $user->id, Activation::exists($user)->code),
-                    );
-
-                    // Send the activation code through email
-                    Mail::send('emails.register-activate', $data, function ($m) use ($user) {
-                        $m->to($user->email, $user->name);
-                        $m->subject('Welcome ' . $user->name);
-                    });
-
-                }
-            }
-
+            $activation = Activation::create($user);
+            Activation::complete($user, $activation->code);
             // Was the user updated?
-            if ($user->save()) {
+            if ($user->save()) 
+            {
                 // Prepare the success message
                 $success = Lang::get('users/message.success.update');
-
                 // Redirect to the user page
-                return Redirect::route('users')->with('success', $success);
+                // return Redirect::route('users')->with('success', $success);
+                return redirect('admin/school');
             }
-
             // Prepare the error message
             $error = Lang::get('users/message.error.update');
-        } catch (UserNotFoundException $e) {
+        } 
+        catch (UserNotFoundException $e) 
+        {
             // Prepare the error message
             $error = Lang::get('users/message.user_not_found', compact('user'));
             // Redirect to the user management page
             return Redirect::route('admin.users.index')->with('error', $error);
         }
-
         // Redirect to the user page
-        return Redirect::route('users')->withInput()->with('error', $error);
+        return Redirect::route('school')->withInput()->with('error', $error);
     }
     
     public function update_change(User $user, Request $request){
+        
         try {
             $user->name = $request->input('name');
-            $user->last_name = $request->input('last_name');
+            $user->user_name = $request->input('user_name');
             $user->email = $request->input('email');
-            $user->dob = $request->input('dob');
-            $user->bio = $request->input('bio');
-            $user->gender = $request->input('gender');
-            $user->country = $request->input('country');
-            $user->state = $request->input('state');
-            $user->city = $request->input('city');
-            $user->address = $request->input('address');
-            $user->postal = $request->input('postal');
-
+            $user->state = $request->input('district');
             if ($password = $request->has('password')) {
                 $user->password = Hash::make($password);
             }
-
-
-            // is new image uploaded?
-            if ($file = $request->file('pic')) {
-                $extension = $file->getClientOriginalExtension() ?: 'png';
-                $folderName = '/uploads/users/';
-                $destinationPath = public_path() . $folderName;
-                $safeName = str_random(10) . '.' . $extension;
-                $file->move($destinationPath, $safeName);
-                //delete old pic if exists
-                if (File::exists(public_path() . $folderName . $user->pic)) {
-                    File::delete(public_path() . $folderName . $user->pic);
-                }
-
-                //save new file path into db
-                $user->pic = $safeName;
-
-            }
-
-            //save record
-            $user->save();
-            
-            // Get the current user groups
-            $userRoles = $user->roles()->lists('id')->all();
-
-            // Get the selected groups
-            $selectedRoles = $request->get('groups', array());
-
-            // Groups comparison between the groups the user currently
-            // have and the groups the user wish to have.
-            $rolesToAdd = array_diff($selectedRoles, $userRoles);
-            $rolesToRemove = array_diff($userRoles, $selectedRoles);
-
-            // Assign the user to groups
-            foreach ($rolesToAdd as $roleId) {
-                $role = Sentinel::findRoleById($roleId);
-
-                $role->users()->attach($user);
-            }
-
-            // Remove the user from groups
-            foreach ($rolesToRemove as $roleId) {
-                $role = Sentinel::findRoleById($roleId);
-
-                $role->users()->detach($user);
-            }
-            
-            // Activate / De-activate user
-            $status = $activation = Activation::completed($user);
-            if ($request->input('activate') != $status) {
-                if ($request->input('activate')) {
-                    $activation = Activation::exists($user);
-                    if ($activation) {
-                        Activation::complete($user, $activation->code);
-                    }
-                } else {
-                    //remove existing activation record
-                    Activation::remove($user);
-                    //add new record
-                    Activation::create($user);
-
-                    //send activation mail
-                    $data = array(
-                        'user' => $user,
-                        'activationUrl' => URL::route('activate', $user->id, Activation::exists($user)->code),
-                    );
-
-                    // Send the activation code through email
-                    Mail::send('emails.register-activate', $data, function ($m) use ($user) {
-                        $m->to($user->email, $user->name);
-                        $m->subject('Welcome ' . $user->name);
-                    });
-
-                }
-            }
-
             // Was the user updated?
             if ($user->save()) {
                 // Prepare the success message
                 $success = Lang::get('users/message.success.update');
 
                 // Redirect to the user page
-                return Redirect::route('admin.users.edit', $user->id)->with('success', $success);
+                return Redirect::route('users.index')->with('success', $success);
             }
 
             // Prepare the error message
@@ -339,11 +213,11 @@ class UsersController extends JoshController
             // Prepare the error message
             $error = Lang::get('users/message.user_not_found', compact('user'));
             // Redirect to the user management page
-            return Redirect::route('admin.users.index')->with('error', $error);
+            return Redirect::route('users.index')->with('error', $error);
         }
 
         // Redirect to the user page
-        return Redirect::route('admin.users.edit', $user->id)->withInput()->with('error', $error);
+        return Redirect::route('users.index')->withInput()->with('error', $error);
     }
 
     /**
@@ -409,7 +283,7 @@ class UsersController extends JoshController
                 $error = Lang::get('admin/users/message.error.delete');
 
                 // Redirect to the user management page
-                return Redirect::route('admin.users.index')->with('error', $error);
+                return redirect('admin/users')->with('error', $error);
             }
 
             // Delete the user
@@ -421,13 +295,13 @@ class UsersController extends JoshController
             $success = Lang::get('users/message.success.delete');
 
             // Redirect to the user management page
-            return Redirect::route('admin.users.index')->with('success', $success);
+            return redirect('admin/users')->with('success', $success);
         } catch (UserNotFoundException $e) {
             // Prepare the error message
             $error = Lang::get('admin/users/message.user_not_found', compact('id'));
 
             // Redirect to the user management page
-            return Redirect::route('admin.users.index')->with('error', $error);
+            return redirect('admin/users')->with('error', $error);
         }
     }
 
@@ -450,14 +324,16 @@ class UsersController extends JoshController
             $data = array(
                 'user' => $user,
                 'activationUrl' => URL::route('activate', [$user->id, Activation::create($user)->code]),
-            );
+                );
 
             // Send the activation code through email
-            Mail::send('emails.register-activate', $data, function ($m) use ($user) {
-                $m->to($user->email, $user->name);
-                $m->subject('Dear ' . $user->name . '! Active your account');
-            });
-
+            if(!empty($user->email) && $user->email != "" && $user->email != null)
+            {
+                Mail::send('emails.register-activate', $data, function ($m) use ($user) {
+                    $m->to($user->email, $user->name);
+                    $m->subject('Dear ' . $user->name . '! Active your account');
+                });
+            }
 
             // Prepare the success message
             $success = Lang::get('users/message.success.restored');
@@ -481,7 +357,7 @@ class UsersController extends JoshController
      */
     public function show($id)
     {
-        
+
         try {
             // Get the user information
             $user = Sentinel::findUserById($id);

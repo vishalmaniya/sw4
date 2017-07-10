@@ -7,6 +7,11 @@ use App\Lession;
 use App\QuestionAnswer;
 use App\AnswerOption;
 use Illuminate\Http\Request;
+use App\DataTables\QuestionsDataTables;
+use App\User;
+use App\UserScore;
+use App\Courses;
+use App\Exam;
 
 use DB;
 use Redirect;
@@ -18,10 +23,10 @@ class QuestionsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(QuestionsDataTables $dataTable)
     {
-        $questions = Questions::with('lession','question_join')->get();
-        return view('admin.questions.index', compact('questions'));
+        //$questions = Questions::with('lession','question_join')->get();
+        return $dataTable->render('admin.questions.index');
     }
 
     /**
@@ -302,5 +307,48 @@ class QuestionsController extends Controller
     {
         $questions = Questions::find($questions)->delete();
         return Redirect::route('questions.index')->with('success', 'Questions Deleted Successfully');
+    }
+    
+    public function unlock_question_view(){
+        $users = User::with('roles')->leftJoin('role_users', 'role_users.user_id', '=', 'users.id')->whereNotIn('role_users.role_id',[4,1])->get();
+        return view('admin.answer.index', compact('users'));
+    }
+    
+    public function get_question(Request $request){
+        $user_id = $request->input('user_id');
+        $user_score = UserScore::where('user_id',$user_id)->get();
+        $course_id = array();
+        foreach($user_score as $class){
+            array_push($course_id, $class->course_id);
+        }
+        $course = Courses::with('category','chapter')->whereIn('id',$course_id)->orderBy('position')->get();
+        $option = '';
+        foreach($course as $cor){
+            foreach($cor->chapter as $ch){
+                foreach($ch->lessons as $less){
+                    foreach($less->questions as $que){
+                        $option .= "<option value='".$que->id."'>".$cor->name . " -> " . $ch->name . " -> " . $less->name . " -> Question" . ($que->position +1)."</option>";
+                    }
+                }
+            }
+        }
+        return $option;
+    }
+    
+    public function unlock_question(Request $request){
+        
+        $question_id = $request->input('question_id');
+        $user_id = $request->input('user_id');
+        $exam = new Exam();
+        $exam->id = $this->get_primary_key('exam');
+        $exam->question_id = $question_id;
+        $exam->user_id = $user_id;
+        $exam->score = 0;
+        $exam->hint_use = 0;
+        $exam->status = 0;
+        $exam->start_time = date('H:i:s', strtotime(date('Y-m-d H:i:s')));
+        $exam->end_time = '00:00:00';
+        $exam->save();
+        return Redirect::route('unlock_question_view')->with('success', 'Questions Unlock Successfully');
     }
 }

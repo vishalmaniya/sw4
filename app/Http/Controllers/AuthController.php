@@ -37,22 +37,21 @@ class AuthController extends JoshController
      */
     public function postSignin(Request $request)
     {
-
         try {
             // Try to log the user in
-            if (Sentinel::authenticate($request->only(['email', 'password']), $request->get('remember-me', false)))
+            if (Sentinel::authenticate($request->only(['user_name', 'password']), $request->get('remember-me', false)))
             {
                 // Redirect to the dashboard page
                 return Redirect::route("dashboard")->with('success', Lang::get('auth/message.signin.success'));
             }
 
-            $this->messageBag->add('email', Lang::get('auth/message.account_not_found'));
+            $this->messageBag->add('user_name', Lang::get('auth/message.account_not_found'));
 
         } catch (NotActivatedException $e) {
-            $this->messageBag->add('email', Lang::get('auth/message.account_not_activated'));
+            $this->messageBag->add('user_name', Lang::get('auth/message.account_not_activated'));
         } catch (ThrottlingException $e) {
             $delay = $e->getDelay();
-            $this->messageBag->add('email', Lang::get('auth/message.account_suspended', compact('delay' )));
+            $this->messageBag->add('user_name', Lang::get('auth/message.account_suspended', compact('delay' )));
         }
 
         // Ooops.. something went wrong

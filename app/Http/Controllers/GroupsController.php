@@ -84,7 +84,7 @@ class GroupsController extends JoshController
      * @param  int $id
      * @return Redirect
      */
-    public function update($id = null, GroupRequest $request)
+    public function update($id = null, Request $request)
     {
         try {
             // Get the group information

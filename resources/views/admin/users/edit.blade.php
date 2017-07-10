@@ -38,7 +38,7 @@ Edit User
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title"> <i class="livicon" data-name="users" data-size="16" data-c="#fff" data-hc="#fff" data-loop="true"></i>
-                        Editing user : {!! $user->name!!}
+                        Editing user : {!! $user->user_name!!}
                     </h3>
                     <span class="pull-right clickable">
                         <i class="glyphicon glyphicon-chevron-up"></i>
@@ -49,22 +49,10 @@ Edit User
                     <!-- errors -->
                     <div class="has-error">
                         {!! $errors->first('name', '<span class="help-block">:message</span>') !!}
+                        {!! $errors->first('user_name', '<span class="help-block">:message</span>') !!}
                         {!! $errors->first('email', '<span class="help-block">:message</span>') !!}
                         {!! $errors->first('password', '<span class="help-block">:message</span>') !!}
                         {!! $errors->first('password_confirm', '<span class="help-block">:message</span>') !!}
-                        {!! $errors->first('group', '<span class="help-block">:message</span>') !!}
-                        {!! $errors->first('pic', '<span class="help-block">:message</span>') !!}
-                        {!! $errors->first('dob', '<span class="help-block">:message</span>') !!}
-                        {!! $errors->first('bio', '<span class="help-block">:message</span>') !!}
-                        {!! $errors->first('gender', '<span class="help-block">:message</span>') !!}
-                        {!! $errors->first('country', '<span class="help-block">:message</span>') !!}
-                        {!! $errors->first('state', '<span class="help-block">:message</span>') !!}
-                        {!! $errors->first('city', '<span class="help-block">:message</span>') !!}
-                        {!! $errors->first('address', '<span class="help-block">:message</span>') !!}
-                        {!! $errors->first('postal', '<span class="help-block">:message</span>') !!}
-                        {!! $errors->first('groups', '<span class="help-block">:message</span>') !!}
-
-
                     </div>
 
                     <!--main content-->
@@ -74,182 +62,61 @@ Edit User
                             <form id="commentForm" action="{{ route('admin.users.update', $user) }}"
                                   method="POST" id="wizard-validation" enctype="multipart/form-data" class="form-horizontal">
                                 <!-- CSRF Token -->
-                                <input type="hidden" name="_method" value="PATCH"/>
+                                <input type="hidden" name="_method" value="PUT"/>
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                                <h2 class="hidden">&nbsp;</h2>
 
-                                <div id="rootwizard">
-                                    <ul>
-                                        <li><a href="#tab1" data-toggle="tab">User Profile</a></li>
-                                        <li><a href="#tab2" data-toggle="tab">Bio</a></li>
-                                        <li><a href="#tab3" data-toggle="tab">Address</a></li>
-                                        <li><a href="#tab4" data-toggle="tab">User Group</a></li>
-                                    </ul>
-                                    <div class="tab-content">
-                                        <div class="tab-pane" id="tab1">
-                                            <h2 class="hidden">&nbsp;</h2>
+                                <div class="form-group">
+                                    <label for="name" class="col-sm-2 control-label">Name *</label>
+                                    <div class="col-sm-10">
+                                        <input id="name" name="name" type="text"
+                                               placeholder="Name" class="form-control required"
+                                               value="{!! old('name', $user->name) !!}"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="user_name" class="col-sm-2 control-label">User Name *</label>
+                                    <div class="col-sm-10">
+                                        <input id="user_name" name="user_name" type="text"
+                                               placeholder="User Name" class="form-control required"
+                                               value="{!! old('user_name', $user->user_name) !!}"/>
+                                    </div>
+                                </div>
 
-                                            <div class="form-group">
-                                                <label for="name" class="col-sm-2 control-label">Name *</label>
-                                                <div class="col-sm-10">
-                                                    <input id="name" name="name" type="text"
-                                                           placeholder="Name" class="form-control required"
-                                                           value="{!! old('name', $user->name) !!}"/>
-                                                </div>
-                                            </div>
+                                <div class="form-group">
+                                    <label for="email" class="col-sm-2 control-label">Email *</label>
+                                    <div class="col-sm-10">
+                                        <input id="email" name="email" placeholder="E-Mail" type="text"
+                                               class="form-control required email"
+                                               value="{!! old('email', $user->email) !!}"/>
+                                    </div>
+                                </div>
 
-                                            <div class="form-group">
-                                                <label for="email" class="col-sm-2 control-label">Email *</label>
-                                                <div class="col-sm-10">
-                                                    <input id="email" name="email" placeholder="E-Mail" type="text"
-                                                           class="form-control required email"
-                                                           value="{!! old('email', $user->email) !!}"/>
-                                                </div>
-                                            </div>
+                                <div class="form-group">
+                                    <p class="text-warning">If you don't want to change password... please leave them empty</p>
+                                    <label for="password" class="col-sm-2 control-label">Password *</label>
+                                    <div class="col-sm-10">
+                                        <input id="password" name="password" type="password" placeholder="Password"
+                                               class="form-control" value="{!! old('password') !!}"/>
+                                    </div>
+                                </div>
 
-                                            <div class="form-group">
-                                                <p class="text-warning">If you don't want to change password... please leave them empty</p>
-                                                <label for="password" class="col-sm-2 control-label">Password *</label>
-                                                <div class="col-sm-10">
-                                                    <input id="password" name="password" type="password" placeholder="Password"
-                                                           class="form-control" value="{!! old('password') !!}"/>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="password_confirm" class="col-sm-2 control-label">Confirm Password *</label>
-                                                <div class="col-sm-10">
-                                                    <input id="password_confirm" name="password_confirm" type="password"
-                                                           placeholder="Confirm Password " class="form-control"
-                                                           value="{!! old('password_confirm') !!}"/>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="tab-pane" id="tab2" disabled="disabled">
-                                            <h2 class="hidden">&nbsp;</h2>
-                                            <div class="form-group">
-                                                <label for="dob" class="col-sm-2 control-label">Date of Birth</label>
-                                                <div class="col-sm-10">
-                                                    <input id="dob" name="dob" type="text" class="form-control required"
-                                                           data-mask="9999-99-99" value="{!! old('dob', $user->dob) !!}"
-                                                           placeholder="yyyy-mm-dd"/>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="pic" class="col-sm-2 control-label">Profile picture</label>
-                                                <div class="col-sm-10">
-                                                    <div class="fileinput fileinput-new" data-provides="fileinput">
-                                                        <div class="fileinput-new thumbnail" style="width: 200px; height: 200px;">
-                                                            @if($user->pic)
-                                                                <img src="{!! url('/').'/uploads/users/'.$user->pic !!}" alt="profile pic">
-                                                            @else
-                                                                <img src="http://placehold.it/200x200" alt="profile pic">
-                                                            @endif
-                                                        </div>
-                                                        <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 200px;"></div>
-                                                        <div>
-                                                    <span class="btn btn-default btn-file">
-                                                        <span class="fileinput-new">Select image</span>
-                                                        <span class="fileinput-exists">Change</span>
-                                                        <input id="pic" name="pic_file" type="file"
-                                                               class="form-control"/>
-                                                    </span>
-                                                            <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="bio" class="col-sm-2 control-label">Bio <small>(brief intro)</small></label>
-                                                <div class="col-sm-10">
-                                            <textarea name="bio" id="bio" class="form-control"
-                                                      rows="4">{!! old('bio', $user->bio) !!}</textarea>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="tab-pane" id="tab3" disabled="disabled">
-                                            <div class="form-group">
-                                                <label for="email" class="col-sm-2 control-label">Gender</label>
-                                                <div class="col-sm-10">
-                                                    <select class="form-control" title="Select Gender..." name="gender">
-                                                        <option value="">Select</option>
-                                                        <option value="male" @if($user->gender === 'male') selected="selected" @endif >MALE</option>
-                                                        <option value="female" @if($user->gender === 'female') selected="selected" @endif >FEMALE</option>
-                                                        <option value="other" @if($user->gender === 'other') selected="selected" @endif >OTHER</option>
-
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group required">
-                                                <label for="country" class="col-sm-2 control-label">Country</label>
-                                                <div class="col-sm-10">
-                                                    {!! Form::select('country', $countries,old('country',$user->country),array('class' => 'form-control')) !!}
-
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="state" class="col-sm-2 control-label">State</label>
-                                                <div class="col-sm-10">
-                                                    <input id="state" name="state" type="text" class="form-control"
-                                                           value="{!! old('state', $user->state) !!}"/>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="city" class="col-sm-2 control-label">City</label>
-                                                <div class="col-sm-10">
-                                                    <input id="city" name="city" type="text" class="form-control"
-                                                           value="{!! old('city', $user->city) !!}"/>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="address" class="col-sm-2 control-label">Address</label>
-                                                <div class="col-sm-10">
-                                                    <input id="address" name="address" type="text" class="form-control"
-                                                           value="{!! old('address', $user->address) !!}"/>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="postal" class="col-sm-2 control-label">Postal/zip</label>
-                                                <div class="col-sm-10">
-                                                    <input id="postal" name="postal" type="text" class="form-control"
-                                                           value="{!! old('postal', $user->postal) !!}"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane" id="tab4" disabled="disabled">
-                                            <p class="text-danger"><strong>Be careful with group selection, if you give admin access.. they can access admin section</strong></p>
-                                            <div class="form-group">
-                                                <label for="group" class="col-sm-2 control-label">Group *</label>
-                                                <div class="col-sm-10">
-                                                    <select class="form-control " title="Select group..." name="groups[]" id="groups" required>
-                                                        <option value="">Select</option>
-                                                        @foreach($roles as $role)
-                                                            <option value="{!! $role->id !!}" {{ (array_key_exists($role->id, $userRoles) ? ' selected="selected"' : '') }}>{{ $role->name }}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="activate" class="col-sm-2 control-label"> Activate User</label>
-                                                <div class="col-sm-10">
-                                                    <input id="activate" name="activate" type="checkbox" class="pos-rel p-l-30" value="1" @if($status) checked="checked" @endif  >
-                                                <span>If user is not activated, mail will be sent to user with activation link</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <ul class="pager wizard">
-                                            <li class="previous"><a href="#">Previous</a></li>
-                                            <li class="next"><a href="#">Next</a></li>
-                                            <li class="next finish" style="display:none;"><a href="javascript:;">Finish</a></li>
-                                        </ul>
+                                <div class="form-group">
+                                    <label for="password_confirm" class="col-sm-2 control-label">Confirm Password *</label>
+                                    <div class="col-sm-10">
+                                        <input id="password_confirm" name="password_confirm" type="password"
+                                               placeholder="Confirm Password " class="form-control"
+                                               value="{!! old('password_confirm') !!}"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-4">
+                                        <a class="btn btn-danger" href="{{ url('admin/users') }}">
+                                            Cancel
+                                        </a>
+                                        <button type="submit" class="btn btn-success">
+                                            Edit User
+                                        </button>
                                     </div>
                                 </div>
                             </form>

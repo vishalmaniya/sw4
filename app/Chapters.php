@@ -15,6 +15,6 @@ class Chapters extends Model
     }
     
     public function lessons(){
-        return $this->hasMany('App\Lession','chapter_id','id')->orderBy('position');
+        return $this->hasMany('App\Lession','chapter_id','id')->orderBy('position')->with('questions');
     }
 }

@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 use Sentinel;
 use DB;
+use App\Exam;
 use View;
 
 class Controller extends BaseController
@@ -17,7 +18,9 @@ class Controller extends BaseController
     
     public function __construct() {
         $user = Sentinel::check();
+        $score_count = Exam::where('user_id',$user->id)->selectRaw('SUM(score)')->get();
         View::share('user', $user);
+        View::share('score_count', $score_count);
     }
 
 
@@ -30,6 +33,7 @@ class Controller extends BaseController
         }
         $time = time();
         $split = str_split($randomString,3);
+        
         $sring = $split[0].$time.$split[1];
         
         $old_id = DB::table($table)->where('id',$sring)->select('id')->first();
@@ -42,7 +46,10 @@ class Controller extends BaseController
             }
             $time = time();
             $split = str_split($randomString,3);
-            $sring = $split[0].$time.$split[1];
+            $sring1 = $split[0].$time.$split[1];
+            if($sring == $sring1){
+               $sring = $this->get_primary_key($table);
+            }
         }
         return $sring;
     }

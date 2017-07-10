@@ -16,4 +16,8 @@ class Questions extends Model
     public function question_join(){
         return $this->hasOne('App\QuestionAnswer','questions_id','id')->with('option');
     }
+    
+    public function viewed_question(){
+        return $this->hasOne('App\Exam','question_id','id');
+    }
 }

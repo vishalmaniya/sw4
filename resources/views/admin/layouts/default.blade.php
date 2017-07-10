@@ -29,7 +29,7 @@
 <body class="skin-josh">
 <header class="header">
     <a href="{{ route('dashboard') }}" class="logo">
-        <img src="{{ asset('assets/img/logo.png') }}" alt="logo">
+        <img src="{{ asset('assets/img/logoadmin.png') }}" class="logo-sidebar-admin" alt="logo" style="width: 70%;">
     </a>
     <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
@@ -42,13 +42,7 @@
             <ul class="nav navbar-nav">
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        @if(Sentinel::getUser()->pic)
-                            <img src="{!! url('/').'/uploads/users/'.Sentinel::getUser()->pic !!}" alt="img"
-                                 class="img-circle img-responsive pull-left" height="35px" width="35px"/>
-                        @else
-                            <img src="{!! asset('assets/img/authors/avatar3.jpg') !!} " width="35"
-                                 class="img-circle img-responsive pull-left" height="35" alt="riot">
-                        @endif
+                        
                         <div class="riot">
                             <div>
                                 {{ Sentinel::getUser()->name }}
@@ -58,18 +52,7 @@
                             </div>
                         </div>
                     </a>
-                    <ul class="dropdown-menu">
-                        <!-- User image -->
-                        <li class="user-header bg-light-blue">
-                            @if(Sentinel::getUser()->pic)
-                                <img src="{!! url('/').'/uploads/users/'.Sentinel::getUser()->pic !!}" alt="img"
-                                     class="img-circle img-bor"/>
-                            @else
-                                <img src="{!! asset('assets/img/authors/avatar3.jpg') !!}"
-                                     class="img-responsive img-circle" alt="User Image">
-                            @endif
-                            <p class="topprofiletext">{{ Sentinel::getUser()->name }}</p>
-                        </li>
+                    <ul class="dropdown-menu" style="min-width: 130px;">
                         <!-- Menu Body -->
                         <li>
                             <a href="{{ URL::route('users.show',Sentinel::getUser()->id) }}">

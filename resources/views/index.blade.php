@@ -2,6 +2,7 @@
 @section('title','Login')
 @section('page_css')
 @endsection
+@section('sub_class','index')
 @section('content')
 <div class="fullcol">
 
@@ -17,15 +18,15 @@
 			<input type="hidden" name="remember-me" value="0">
             <ul class="one">
 			
-                <li width="20"><label  class="label-size">Username</label></li>
-                <li><input type="text" name="email" id="email" maxlength="80" size="30"></li>
+                <li width="20"><label  class="label-size">Username/Email:</label></li>
+                <li><input type="text" name="user_name" id="email" maxlength="80" size="30"></li>
             </ul>
             <ul class="two">
                 <li></li>
                 <li class="error_msg"></li>
             </ul>
             <ul class="three">
-                <li></li><label  class="label-size">Password</label></li>
+                <li></li><label  class="label-size" style="padding: 0 0 0 9%;">Password:</label></li>
                 <li></li><input type="password" name="password" id="password" size="30"></li>
             </ul>
             
@@ -40,7 +41,7 @@
                 </li>
             </ul>
         </form>
-
+	<div class="ban_error_msg"></div>
     </div>
 </div>
 @endsection

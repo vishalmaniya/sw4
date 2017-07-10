@@ -11,6 +11,10 @@ class UserScore extends Model
     public $incrementing = false;
     
     public function course(){
-        return $this->hasOne('App\Courses','id','course_id')->orderBy('position')->with('category','chapter');
+        return $this->hasOne('App\Courses','id','course_id')->orderBy('position','ASC')->with('category','chapter');
+    }
+    
+    public function user(){
+    	return $this->hasOne('App\User','id','user_id');
     }
 }

@@ -40,45 +40,7 @@ Question List
             </div>
             <br />
             <div class="panel-body">
-                <table class="table table-bordered " id="table">
-                    <thead>
-                        <tr class="filters">
-                            <th>Lesson Name</th>
-                            <th>Question</th>
-                            <th>Type</th>
-                            <th>Created At</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    @foreach ($questions as $question)
-                    	<tr>
-                            <td>{!! $question->lession->name !!}</td>
-                            <td>{!! $question->question_join->question !!}</td>
-                            <td>
-                                {!! $question->type !!}
-                            </td>
-                            <td>{!! $question->created_at->diffForHumans() !!}</td>
-                            <td>
-                                <a href="{{ route('questions.show', $question->id) }}" style="float: left;"><i class="livicon" data-name="info" data-size="18" data-loop="true" data-c="#428BCA" data-hc="#428BCA" title="view Question"></i></a>
-                                <a href="{{ route('questions.edit', $question->id) }}" style="float: left;"><i class="livicon" data-name="Question"
-                                    data-size="18" data-loop="true"
-                                    data-c="#428BCA"
-                                    data-hc="#428BCA"
-                                    title="update Question"></i></a>
-                                
-                                <form action="{{ route('questions.destroy', $question->id) }}" method="POST" id="form-id-{{ $question->id }}" style="width: 6%;float: left;">
-                                    <!-- CSRF Token -->
-                                    <input type="hidden" name="_method" value="DELETE"/>
-                                    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                                    <a onclick="document.getElementById('form-id-{{ $question->id }}').submit();"><i class="livicon" data-name="Lession-remove" data-size="18" data-loop="true" data-c="#f56954" data-hc="#f56954" title="delete Question"></i></a>
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
-                        
-                    </tbody>
-                </table>
+                {!! $dataTable->table([], true) !!}
             </div>
         </div>
     </div>    <!-- row-->
@@ -89,7 +51,9 @@ Question List
 @section('footer_scripts')
     <script type="text/javascript" src="{{ asset('assets/vendors/datatables/js/jquery.dataTables.js') }}" ></script>
     <script type="text/javascript" src="{{ asset('assets/vendors/datatables/js/dataTables.bootstrap.js') }}" ></script>
-
+    <script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
+    <script src="{{ asset('/vendor/datatables/buttons.server-side.js') }}"></script>
+{!! $dataTable->scripts() !!}
 <script>
 $(document).ready(function() {
 	$('#table').DataTable();

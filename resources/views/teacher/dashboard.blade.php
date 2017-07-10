@@ -28,27 +28,27 @@
                  @foreach($courses as $course)
                  <div class="row">
                    <div class="col1">
-                      <a href="#"><img src="http://www.studioweb.com/uploads/{{ str_replace(" ","_",strtolower($course->course->name)) }}/badge_sml.png"></a>
+                      <a href="#"><img src="http://www.studioweb.com/uploads/{{ $course->slug }}/badge_sml.png"></a>
                    </div>
                    <div class="col2">
-                      <h3>{{ $course->course->name }} <span id="{{ $course->course->category->name }}">{{ $course->course->category->name }}</span></h3>
+                      <h3>{{ $course->name }} <span id="{{ $course->category->name }}">{{ $course->category->name }}</span></h3>
                       <div class="description">
                           <p id="course_description">
-                            {!! $course->course->description !!}
+                            {!! $course->description !!}
                           <p/>
                       </div>
                       <p>
-                         <a href="{{ route('teacher_courses_view',['id'=>$course->course->id,'name'=>str_replace(" ","_",strtolower($course->course->name))]) }}" class="button_green_sml">Review Course Material</a>
+                         <a href="{{ route('user_courses_view',['name'=>$course->slug]) }}" class="button_green_sml">Review Course Material</a>
                       </p>
-                      @if(!empty($course->course->source))
+                      @if(!empty($course->source))
                       <p class="left-wrap" style="margin-top: 30px;">
-                         <a href="http://www.studioweb.com/uploads/{{ str_replace(" ","_",strtolower($course->course->name)) }}/{{ $course->course->source }}">
+                         <a href="http://www.studioweb.com/uploads/{{ $course->slug }}/{{ $course->source }}">
                          <img style="padding-right: 10px; vertical-align: middle; height: 32px;" src="{{ asset('front_assets/images/icon-sourcefiles.png') }}">Course Documents</a>
                          (Eyes Only)
                       </p>
                       @endif
                       <p style="margin-top: 30px;">
-                         <a href="http://dev.studioweb.com/questions_answers/{{ $course->course->id }}">
+                         <a href="http://dev.studioweb.com/questions_answers/{{ $course->id }}">
                          <img style="padding-right: 10px; vertical-align: middle; height: 32px;" src="{{ asset('front_assets/images/icon-list-mini.png') }}">View Answer Book</a>
                          (Eyes Only)
                       </p>

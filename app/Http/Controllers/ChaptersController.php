@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Chapters;
 use App\Courses;
 use Illuminate\Http\Request;
+use App\DataTables\ChapterDataTables;
 
 use DB;
 use Redirect;
@@ -16,10 +17,9 @@ class ChaptersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(ChapterDataTables $dataTable)
     {
-        $chapters = Chapters::with('course')->get();
-        return view('admin.chapters.index', compact('chapters'));
+        return $dataTable->render('admin.chapters.index');
     }
 
     /**

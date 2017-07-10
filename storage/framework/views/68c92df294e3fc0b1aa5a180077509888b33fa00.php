@@ -1,6 +1,7 @@
 <?php $__env->startSection('title','Login'); ?>
 <?php $__env->startSection('page_css'); ?>
 <?php $__env->stopSection(); ?>
+<?php $__env->startSection('sub_class','index'); ?>
 <?php $__env->startSection('content'); ?>
 <div class="fullcol">
 
@@ -16,7 +17,7 @@
 			<input type="hidden" name="remember-me" value="0">
             <ul class="one">
 			
-                <li width="20"><label  class="label-size">Username</label></li>
+                <li width="20"><label  class="label-size">Username/Email:</label></li>
                 <li><input type="text" name="email" id="email" maxlength="80" size="30"></li>
             </ul>
             <ul class="two">
@@ -24,7 +25,7 @@
                 <li class="error_msg"></li>
             </ul>
             <ul class="three">
-                <li></li><label  class="label-size">Password</label></li>
+                <li></li><label  class="label-size" style="padding: 0 0 0 9%;">Password:</label></li>
                 <li></li><input type="password" name="password" id="password" size="30"></li>
             </ul>
             
@@ -39,7 +40,7 @@
                 </li>
             </ul>
         </form>
-
+	<div class="ban_error_msg"></div>
     </div>
 </div>
 <?php $__env->stopSection(); ?>

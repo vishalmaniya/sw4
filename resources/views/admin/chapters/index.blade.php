@@ -40,41 +40,7 @@ Chapters List
             </div>
             <br />
             <div class="panel-body">
-                <table class="table table-bordered " id="table">
-                    <thead>
-                        <tr class="filters">
-                            <th>Name</th>
-                            <th>Course</th>
-                            <th>Created At</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    @foreach ($chapters as $chapter)
-                    	<tr>
-                            <td>{!! $chapter->name !!}</td>
-                            <td>{!! $chapter->course->name !!}</td>
-                            <td>{!! $chapter->created_at->diffForHumans() !!}</td>
-                            <td>
-                                <a href="{{ route('chapters.show', $chapter->id) }}" style="float: left;"><i class="livicon" data-name="info" data-size="18" data-loop="true" data-c="#428BCA" data-hc="#428BCA" title="view courses"></i></a>
-                                <a href="{{ route('chapters.edit', $chapter->id) }}" style="float: left;"><i class="livicon" data-name="chapter"
-                                    data-size="18" data-loop="true"
-                                    data-c="#428BCA"
-                                    data-hc="#428BCA"
-                                    title="update chapters"></i></a>
-                                
-                                <form action="{{ route('chapters.destroy', $chapter->id) }}" method="POST" id="form-id-{{ $chapter->id }}" style="width: 6%;float: left;">
-                                    <!-- CSRF Token -->
-                                    <input type="hidden" name="_method" value="DELETE"/>
-                                    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                                    <a onclick="document.getElementById('form-id-{{ $chapter->id }}').submit();"><i class="livicon" data-name="chapters-remove" data-size="18" data-loop="true" data-c="#f56954" data-hc="#f56954" title="delete Chapters"></i></a>
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
-                        
-                    </tbody>
-                </table>
+                {!! $dataTable->table([], true) !!}
             </div>
         </div>
     </div>    <!-- row-->
@@ -85,12 +51,9 @@ Chapters List
 @section('footer_scripts')
     <script type="text/javascript" src="{{ asset('assets/vendors/datatables/js/jquery.dataTables.js') }}" ></script>
     <script type="text/javascript" src="{{ asset('assets/vendors/datatables/js/dataTables.bootstrap.js') }}" ></script>
-
-<script>
-$(document).ready(function() {
-	$('#table').DataTable();
-});
-</script>
+    <script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
+    <script src="{{ asset('/vendor/datatables/buttons.server-side.js') }}"></script>
+{!! $dataTable->scripts() !!}
 
 <div class="modal fade" id="delete_confirm" tabindex="-1" role="dialog" aria-labelledby="user_delete_confirm_title" aria-hidden="true">
 	<div class="modal-dialog">

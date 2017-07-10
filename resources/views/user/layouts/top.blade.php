@@ -5,5 +5,5 @@
             march05_admin
         </a>
     </div>
-    <div class="points"><b>Total Points:</b> 160 points</div>
+    <div class="points"><b>Total Points:</b> {{ $score_count[0]->user_score or 0 }} points</div>
 </div>

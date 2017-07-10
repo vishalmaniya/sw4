@@ -40,52 +40,7 @@ Courses List
             </div>
             <br />
             <div class="panel-body">
-                <table class="table table-bordered " id="table">
-                    <thead>
-                        <tr class="filters">
-                            <th>Name</th>
-                            <th>Category</th>
-                            <th>Price</th>
-                            <th>Visibility</th>
-                            <th>Created At</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    @foreach ($courses as $course)
-                    	<tr>
-                            <td>{!! $course->name !!}</td>
-                            <td>{!! $course->category->name !!}</td>
-                            <td>{!! $course->price !!}</td>
-                            <td>
-                                @if($course->public == 1)
-                                        Public
-                                @else
-                                        Private
-                                @endif
-                            </td>
-                            <td>{!! $course->created_at->diffForHumans() !!}</td>
-                            <td>
-                                <a href="{{ route('courses.show', $course->id) }}" style="float: left;"><i class="livicon" data-name="info" data-size="18" data-loop="true" data-c="#428BCA" data-hc="#428BCA" title="view courses"></i></a>
-                                <a href="{{ route('courses.edit', $course->id) }}" style="float: left;"><i class="livicon" data-name="courses"
-                                    data-size="18" data-loop="true"
-                                    data-c="#428BCA"
-                                    data-hc="#428BCA"
-                                    title="update Courses"></i></a>
-                                
-                                <form action="{{ route('courses.destroy', $course->id) }}" method="POST" id="form-id-{{ $course->id }}" style="width: 6%;float: left;">
-                                    <!-- CSRF Token -->
-                                    <input type="hidden" name="_method" value="DELETE"/>
-                                    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                                    <a onclick="document.getElementById('form-id-{{ $course->id }}').submit();"><i class="livicon" data-name="courses-remove" data-size="18" data-loop="true" data-c="#f56954" data-hc="#f56954" title="delete Courses"></i></a>
-                                </form>
-                                
-                            </td>
-            			</tr>
-                    @endforeach
-                        
-                    </tbody>
-                </table>
+                {!! $dataTable->table([], true) !!}
             </div>
         </div>
     </div>    <!-- row-->
@@ -96,13 +51,9 @@ Courses List
 @section('footer_scripts')
     <script type="text/javascript" src="{{ asset('assets/vendors/datatables/js/jquery.dataTables.js') }}" ></script>
     <script type="text/javascript" src="{{ asset('assets/vendors/datatables/js/dataTables.bootstrap.js') }}" ></script>
-
-<script>
-$(document).ready(function() {
-	$('#table').DataTable();
-});
-</script>
-
+    <script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
+    <script src="{{ asset('/vendor/datatables/buttons.server-side.js') }}"></script>
+{!! $dataTable->scripts() !!}
 <div class="modal fade" id="delete_confirm" tabindex="-1" role="dialog" aria-labelledby="user_delete_confirm_title" aria-hidden="true">
 	<div class="modal-dialog">
     	<div class="modal-content"></div>

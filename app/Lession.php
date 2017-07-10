@@ -13,4 +13,8 @@ class Lession extends Model
     public function chapter(){
         return $this->hasOne('App\Chapters','id','chapter_id')->with('course');
     }
+    
+    public function questions(){
+        return $this->hasMany('App\Questions','lession_id','id')->with('viewed_question')->orderBy('position');
+    }
 }

@@ -14,14 +14,11 @@
 /**
  * Model binding into route
  */
-
+Route::get('/clear-cache', function() {
+    $exitCode = Artisan::call('config:cache');
+    // return what you want
+});
 Route::group(['middleware' => 'web'], function () {
-
-    //Route::model('blogcategory', 'App\BlogCategory');
-    //Route::model('blog', 'App\Blog');
-    //Route::model('file', 'App\File');
-    //Route::model('task', 'App\Task');
-    //Route::model('users', 'App\User');
 
     Route::pattern('slug', '[a-z0-9- _]+');
 
@@ -79,7 +76,7 @@ Route::group(['middleware' => 'web'], function () {
             Route::get('create', 'UsersController@create');
             Route::get('edit/{user}',array('as'=>'admin.users.edit' ,'uses'=>'UsersController@edit'));
             Route::put('update',array('as'=>'admin.users.store' ,'uses'=>'UsersController@update'));
-            Route::put('update_user',array('as'=>'admin.users.update' ,'uses'=>'UsersController@update_change'));
+            Route::put('update_user/{user}',array('as'=>'admin.users.update' ,'uses'=>'UsersController@update_change'));
 
             Route::post('create', 'UsersController@store');
             Route::get('{userId}/delete', array('as' => 'delete/user', 'uses' => 'UsersController@destroy'));
@@ -88,6 +85,8 @@ Route::group(['middleware' => 'web'], function () {
             Route::get('{userId}', array('as' => 'users.show', 'uses' => 'UsersController@show'));
             Route::post('passwordreset', 'UsersController@passwordreset');
         });
+        Route::get('school','UsersController@school_list');
+        
         Route::resource('users', 'UsersController');
         Route::resource('category', 'CategoryController');
         Route::resource('courses', 'CoursesController');
@@ -96,6 +95,11 @@ Route::group(['middleware' => 'web'], function () {
         Route::resource('questions', 'QuestionsController');
         Route::resource('contact', 'ContactController');
         Route::resource('classroom','ClassroomController');
+        Route::get('csv_download','ClassroomController@csv_download');
+        Route::get('csv_update','ClassroomController@csv_update');
+        Route::post('update_csv','ClassroomController@update_classroom');
+        Route::resource('roles','RoleController');
+        Route::resource('district','DistrictController');
         
         Route::post('onchange_course',array('as'=>'change_course','uses'=>'LessionController@onchange_course'));
         
@@ -115,6 +119,10 @@ Route::group(['middleware' => 'web'], function () {
             Route::get('{groupId}/confirm-delete', array('as' => 'confirm-delete/group', 'uses' => 'GroupsController@getModalDelete'));
             Route::get('{groupId}/restore', array('as' => 'restore/group', 'uses' => 'GroupsController@getRestore'));
         });
+        
+        Route::post('get_question',array('as'=>'get_question','uses'=>'QuestionsController@get_question'));
+        Route::post('unlock_question_post',array('as'=>'unlock_question','uses'=>'QuestionsController@unlock_question'));
+        Route::get('unlock_question',array('as'=>'unlock_question_view','uses'=>'QuestionsController@unlock_question_view'));
 
         Route::get('crop_demo', function () {
             return redirect('admin/imagecropping');
@@ -132,26 +140,11 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('{name?}', 'JoshController@showView');
 
     });
+    
+    
+        
     Route::group(['middleware' => 'data_traffic'], function () {
-        #FrontEndController
-        Route::get('user-dashboard', array('as' => 'user.dashboard','uses' => 'FrontEndController@user_dashboard'));
-        Route::get('teacher-dashboard', array('as' => 'teacher.dashboard','uses' => 'FrontEndController@teacher_dashboard'));
         
-        #purchase courses
-        Route::get('purchased-courses',array('as'=>'purchased_courses','uses'=>'FrontEndController@getCourses'));
-        Route::get('teacher/courses/{id}/{name}',array('as'=>'teacher_courses_view','uses'=>'FrontEndController@teacher_courses_preview'));
-        
-        #change-password, update-profile
-        Route::get('update_profile',array('as'=>'update_profile','uses'=>'FrontEndController@getUpdate_profile'));
-        Route::post('update_profile','FrontEndController@postUpdate_profile');
-        Route::get('change_password',array('as'=>'change_password','uses'=>'FrontEndController@getChange_password'));
-        Route::post('change_password','FrontEndController@postChange_password');
-        
-        #class_room
-        Route::get('class_room',array('as'=>'class_room','uses'=>'FrontEndController@class_room'));
-        
-        #public profile
-        Route::get('user-public-profile',array('as'=>'public_profile','uses'=>'FrontEndController@getPublic_profile'));
         
         Route::post('login',array('as' => 'login','uses' => 'FrontEndController@postLogin'));
         Route::get('register', array('as' => 'register','uses' => 'FrontEndController@getRegister'));
@@ -166,14 +159,38 @@ Route::group(['middleware' => 'web'], function () {
         Route::group(array('middleware' => 'SentinelUser'), function () {
             Route::get('my-account', array('as' => 'my-account', 'uses' => 'FrontEndController@myAccount'));
             Route::put('my-account', 'FrontEndController@update');
+            Route::get('user/courses/{name}',array('as'=>'user_courses_view','uses'=>'FrontEndController@user_courses_preview'));
+            Route::get('user/courses/{name}/{ch}/{lesson}',array('as'=>'user_lesson_view','uses'=>'FrontEndController@user_lesson_preview'));
+            Route::get('user/courses/{name}/{ch}/{lesson}/{q}',array('as'=>'user_que_view','uses'=>'FrontEndController@user_que_preview'));
+            Route::post('user/courses/{name}/{ch}/{lesson}/{q}','FrontEndController@user_que_answer');
+
+            Route::post('change_hint',array('as'=>'change_hint','uses'=>"FrontEndController@save_hint_used"));
+            Route::get('logout', array('as' => 'logout','uses' => 'FrontEndController@getLogout'));
+            
+            #FrontEndController
+            Route::get('user-dashboard', array('as' => 'user.dashboard','uses' => 'FrontEndController@user_dashboard'));
+            Route::get('teacher-dashboard', array('as' => 'teacher.dashboard','uses' => 'FrontEndController@teacher_dashboard'));
+
+            #purchase courses
+            Route::get('purchased-courses',array('as'=>'purchased_courses','uses'=>'FrontEndController@getCourses'));
+            Route::get('teacher/courses/{name}',array('as'=>'teacher_courses_view','uses'=>'FrontEndController@teacher_courses_preview'));
+
+            #change-password, update-profile
+            Route::get('update_profile',array('as'=>'update_profile','uses'=>'FrontEndController@getUpdate_profile'));
+            Route::post('update_profile','FrontEndController@postUpdate_profile');
+            Route::get('change_password',array('as'=>'change_password','uses'=>'FrontEndController@getChange_password'));
+            Route::post('change_password','FrontEndController@postChange_password');
+
+            #class_room
+            Route::get('class_room',array('as'=>'class_room','uses'=>'FrontEndController@class_room'));
+
+            #public profile
+            Route::get('user-public-profile',array('as'=>'public_profile','uses'=>'FrontEndController@getPublic_profile'));
         });
-        Route::get('logout', array('as' => 'logout','uses' => 'FrontEndController@getLogout'));
         
         # courses list
         Route::get('courses',array('as'=>'courses','uses'=>'FrontEndController@getCourses'));
-        Route::get('courses/{id}/{name}',array('as'=>'courses_view','uses'=>'FrontEndController@getCourse'));
-        Route::get('user/courses/{id}/{name}',array('as'=>'user_courses_view','uses'=>'FrontEndController@getCourse'));
-        
+        Route::get('courses/{name}',array('as'=>'courses_view','uses'=>'FrontEndController@getCourse'));
         
         #support
         Route::get('support',array('as'=>'support','uses'=>'FrontEndController@getSupport'));

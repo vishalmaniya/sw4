@@ -58,9 +58,7 @@
 .btn{
   display: none;
 }
-li{
-  list-style: none;
-}
+
 body .ui-tooltip {
   border-width: -78px;
   display: none;
@@ -285,7 +283,7 @@ padding-right: 10px; vertical-align: middle; height: 32px;
   width: 100%;
   max-width: 25%;
   position: relative;
-  top: 46px;
+  top: 29px;
   left: 24px;
 }
 .codinator {
@@ -1264,7 +1262,7 @@ body.course h1, body.usersright h1 {
         padding: 30px 30px;
       }
       .sectionbg {
-      padding: 40px 0;
+      padding: 40px 10px;
     }
   .logoo form {
       width: 100%;
@@ -2389,4 +2387,12 @@ body.course h1, body.usersright h1 {
         margin-top: 18px !important;
         margin-right: 0;
     }
+}
+
+body {
+    background: #138446 url(../images/bg.jpg) top center no-repeat;
+    font-size: 13px;
+    min-width: 110px;
+    padding-bottom: 20px;
+    background-size: cover;
 }

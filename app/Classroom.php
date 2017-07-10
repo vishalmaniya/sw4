@@ -11,10 +11,10 @@ class Classroom extends Model
     public $incrementing = false;
     
     public function user(){
-        return $this->hasMany('App\UserScore','classroom_id','id');
+        return $this->hasMany('App\UserScore','classroom_id','id')->with('user');
     }
     
     public function teacher(){
-        return $this->hasOne('App\UserScore','user_id','teacher_id');
+        return $this->hasOne('App\UserScore','user_id','teacher_id')->with('user');
     }
 }

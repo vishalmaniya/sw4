@@ -29,7 +29,7 @@
 
 .section { padding: 25.5px 50px; }
 .sectionbg { border-top: 1px solid #e2e2e2; }
-.sectionbg form { width: 500px; display: block; margin: 10px auto 0; }
+.sectionbg form { width: 50%; display: block; margin: 10px auto 0; }
 
 .reminder { padding: 30px;}
 .reminder { border-top: 1px solid #e2e2e2; }
@@ -65,15 +65,17 @@ body .ui-tooltip {
     border-width: -78px;
     display: none;
 }
-.forgetpassword{
-    padding-left: 128px;
-}
 .index .error {
     display: inline-block;
     width: 100%;
     text-align: left;
 }
-
+.ban_error_msg {
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 18px;
+    color: red;
+}
 .index .error_msg {
     /* display: inline-block; */
     /* width: 100%; */
@@ -126,7 +128,7 @@ body .ui-tooltip {
     max-width: 50%;
 }
 span {
-    margin-left: 5px;
+    margin-left: 0px;
 }
 .coll {
     display: inline-block;
@@ -314,7 +316,8 @@ span {
 }
 @media screen and (max-width: 1199px) and (min-width: 110px) {
     #topnav .inner {
-        width: 90%;
+        width: 97% !important;
+        margin: 0 !important;
     }
 
 
@@ -325,21 +328,21 @@ span {
         background-size: 100%;
     }
     .public #header {
-        background-size: 100%;
+        background-size: 100% !important;
     }
     #content {
         width: 100%;
         background-size: 100%;
     }
     #footer {
-        width: 100%;
+        width: 100% !important;
     }
     .section img {
         width: 100%;
         max-width: 45%;
     }
     #wrapper {
-        width: 90%;
+        width: 90% !important;
     }
     .usersright #header {
         background-size: 100%;
@@ -2274,4 +2277,33 @@ span {
         width: 168px;
         height: 74px;
     }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 110px;){
+#footer {width: 100%; background-size: 100%; }
+.public #header {background-size: 100%; }
+.section .icons {width: 220px; position: absolute; top: 65px; right: 120px; }
+}
+
+@media screen and (max-width: 1180px) and (min-width: 110px;){
+#topnav {background: #000; padding: 2px 0; width: 100%; min-width: 100%; }
+#topnav .inner {width: 90%; margin: 0 auto; overflow: hidden; }
+}
+
+@media screen and (max-width: 980px) and (min-width: 110px;){
+#topnav .logo {margin-top: 5px; margin-left: 0; }
+.sectionbg {padding: 30px;background-size: 0%; width: 90%; }
+
+}
+
+@media screen and (max-width: 980px) and (min-width: 110px;){
+    #topnav {background: #000; padding: 2px 0; width: 100%; min-width: 100%; }
+    #topnav .logo {margin-left: 0; }
+}
+
+@media screen and (max-width: 380px) and (min-width: 110px;){
+    .b1 img {width: 85%; margin-top: 9px; float: right; }
+}
+@media screen and (max-width: 320px) and (min-width: 110px;){
+    .b1 img {width: 100%; margin-top: 6px; float: right; }
 }

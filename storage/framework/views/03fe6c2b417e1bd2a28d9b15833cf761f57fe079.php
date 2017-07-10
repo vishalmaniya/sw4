@@ -23,7 +23,7 @@
         
     </head>
     <body class="public">
-            <div class="index">
+            <div class="">
                 <div class="<?php echo $__env->yieldContent('sub_class'); ?>">
                 <!-- navigation bar -->
                 <div class="navbar">

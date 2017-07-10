@@ -2,7 +2,7 @@
 
 {{-- Page title --}}
 @section('title')
-View Lession Details
+View Lesson Details
 @parent
 @stop
 
@@ -16,7 +16,7 @@ View Lession Details
 @section('content')
     <section class="content-header">
         <!--section starts-->
-        <h1>Lession</h1>
+        <h1>Lesson</h1>
         <ol class="breadcrumb">
             <li>
                 <a href="{{ route('dashboard') }}">
@@ -25,9 +25,9 @@ View Lession Details
                 </a>
             </li>
             <li>
-                <a href="#">Lessions</a>
+                <a href="#">Lessons</a>
             </li>
-            <li class="active">Lession</li>
+            <li class="active">Lesson</li>
         </ol>
     </section>
     <!--section ends-->

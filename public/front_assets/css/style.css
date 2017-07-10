@@ -15,7 +15,7 @@
 
    html { min-width: 110px; }
    body { background: #138446 url(../images/bg.jpg) top center no-repeat;
-   		font-size: 13px; min-width: 110px; padding-bottom: 30px; }
+   		font-size: 13px !important; min-width: 110px; padding-bottom: 30px; background-color: #138446 !important; }
    
    p { margin: 14px 0; }
    * p:last-child {margin-bottom: 0;}
@@ -35,10 +35,10 @@
 /* Template Styles
    -------------------------------------------------------------------------------- */
    
-   #topnav { background: #000; padding:2px 0; width:100%; min-width: 978px; }
+   #topnav { background: #000; padding:2px 0; width:100%;  }
    		#topnav .inner { width:1178px; margin: 0 auto; overflow: hidden; }
    		
-   		#topnav .logo { font-family: "Open Sans", sans-serif; float: left; margin-top: 5px; margin-left: 18px; font-size: 24px; color: #fff; text-decoration: none; font-weight: 200;}
+   		#topnav .logo { font-family: "Open Sans", sans-serif; float: left; margin-top: 5px; margin-left: 18px; font-size: 24px; color: #fff; text-decoration: none; font-weight: 200;width:30%; }
          #topnav .logo span { font-weight: 500; }
    		
    		#topnav ul { float: right; list-style: none; margin: 9px 0; color: #fff; }
@@ -57,7 +57,7 @@
             #topnav .help { background-color: #f89406; float: right; padding: 5px 25px; border-radius: 2px;  margin: 9px 15px; color: #fff; text-decoration: none; }
             #topnav .help:hover { background-color: #d68819; }
    
-   #wrapper { width:1176px; margin: 0 auto; }
+   #wrapper { width: 87%; margin: 0 auto; }
    
    		/* header */
    		#header { margin-top: 20px; padding: 0 18px; height: 130px; background: url(../images/bg-trans-top.png) bottom left no-repeat; position: relative; }
@@ -122,7 +122,7 @@
             #footer a { text-decoration: none; }
             #footer a:hover { text-decoration: underline; }
 
-            #footer p { text-align: center; font-size: 12px; font-weight: 100; }
+            #footer p { text-align: center; font-size: 12px; font-weight: 100;     margin: 14px 0; }
    				
    			#footer .col1 { padding: 35px 50px 0 36px; width:390px; float:left; position: relative; }
             #footer .col1.small { width: 300px; }
@@ -603,7 +603,7 @@
       	.signup_subscribe input {font-size: 16px; float: right; position: relative; top: -27px; left: -215px;}
 		
 		/* login */
-		.forgetpassword { padding: 8px 0 0 134px; }
+		.forgetpassword { padding: 8px 0 0 107px; }
 		.forgetpassword label { padding-right: 142px; }
 		
 		/* forgot password form */
@@ -959,3 +959,60 @@
         
         
         
+        
+        @media screen and (max-width: 380px) and (min-width: 110px;){
+    .twocol .leftcol {
+        float: left;
+        width: 870px;
+        padding: 0 0 00;
+        min-height: 480px;
+    }
+    .section {
+        padding: 7px 10px;
+    }
+    .section h1 {
+        margin: 0;
+        font-size: 22px;
+    }
+    .purchase .description {
+        text-align: justify;
+        width: 90%;
+        margin-left: -20px;
+    }
+}
+
+
+
+
+@media screen and (max-width: 1200px) and (min-width: 110px;){
+#footer {width: 100%; background-size: 100%; }
+.public #header {background-size: 100%; }
+.section .icons {width: 220px; position: absolute; top: 65px; right: 120px; }
+}
+
+@media screen and (max-width: 1180px) and (min-width: 110px;){
+#topnav {background: #000; padding: 2px 0; width: 100%; min-width: 100%; }
+#topnav .inner {width: 90%; margin: 0 auto; overflow: hidden; }
+}
+
+@media screen and (max-width: 980px) and (min-width: 110px;){
+#topnav .logo {margin-top: 5px; margin-left: 0; }
+.sectionbg {padding: 30px;background-size: 0%; width: 90%; }
+
+}
+
+@media screen and (max-width: 980px) and (min-width: 110px;){
+    #topnav {background: #000; padding: 2px 0; width: 100%; min-width: 100%; }
+    #topnav .logo {margin-left: 0; }
+}
+
+@media screen and (max-width: 380px) and (min-width: 110px;){
+    .b1 img {width: 85%; margin-top: 9px; float: right; }
+}
+@media screen and (max-width: 320px) and (min-width: 110px;){
+    .b1 img {width: 100%; margin-top: 6px; float: right; }
+}
+
+.navbar{
+    border: none !important;
+}

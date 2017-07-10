@@ -11,7 +11,7 @@
 
         <meta http-equiv="imagetoolbar" content="false" />
         <meta name="MSSmartTagsPreventParsing" content="true" />
-        <link rel="shortcut icon" type="image/x-icon" href="http://dev.studioweb.com/favicon.ico" />
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
         <link href="{{ asset('front_assets/css/normalize.css') }}" media="screen" rel="stylesheet" type="text/css" />
         <link href="{{ asset('front_assets/css/style.css') }}" media="screen" rel="stylesheet" type="text/css" />
@@ -23,7 +23,7 @@
         
     </head>
     <body class="public">
-            <div class="index">
+            <div class="">
                 <div class="@yield('sub_class')">
                 <!-- navigation bar -->
                 <div class="navbar">

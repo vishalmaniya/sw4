@@ -20,9 +20,76 @@
         </li>
     </ul>
 </li>
-<li {!! (Request::is('admin/classroom') || Request::is('admin/classroom/create') || Request::is('admin/classroom/*') ? 'class="active"' : '') !!}>
+<li {!! (Request::is('admin/roles') || Request::is('admin/roles/create') || Request::is('admin/roles/*') ? 'class="active"' : '') !!}>
     <a href="#">
-        <i class="livicon" data-name="thumbnails-small" data-size="18" data-c="#67C5DF" data-hc="#67C5DF"
+        <i class="livicon" data-name="list" data-size="18" data-c="#F89A14" data-hc="#F89A14"
+           data-loop="true"></i>
+        <span class="title">Roles</span>
+        <span class="fa arrow"></span>
+    </a>
+    <ul class="sub-menu">
+        <li {!! (Request::is('admin/roles') ? 'class="active" id="active"' : '') !!}>
+            <a href="{{ URL::to('admin/roles') }}">
+                <i class="fa fa-angle-double-right"></i>
+                Roles
+            </a>
+        </li>
+        <li {!! (Request::is('admin/roles/create') ? 'class="active" id="active"' : '') !!}>
+            <a href="{{ URL::to('admin/roles/create') }}">
+                <i class="fa fa-angle-double-right"></i>
+                Add New Role
+            </a>
+        </li>
+    </ul>
+</li>
+<li {!! (Request::is('admin/school') || Request::is('admin/users/create') || Request::is('admin/school/*') ? 'class="active"' : '') !!}>
+    <a href="#">
+        <i class="livicon" data-name="list" data-size="18" data-c="#F89A14" data-hc="#F89A14"
+           data-loop="true"></i>
+        <span class="title">School</span>
+        <span class="fa arrow"></span>
+    </a>
+    <ul class="sub-menu">
+        <li {!! (Request::is('admin/district') ? 'class="active" id="active"' : '') !!}>
+            <a href="{{ URL::to('admin/school') }}">
+                <i class="fa fa-angle-double-right"></i>
+                School List
+            </a>
+        </li>
+        <li {!! (Request::is('admin/district/create') ? 'class="active" id="active"' : '') !!}>
+            <a href="{{ URL::to('admin/users/create') }}">
+                <i class="fa fa-angle-double-right"></i>
+                Add New School
+            </a>
+        </li>
+    </ul>
+</li>
+<li {!! (Request::is('admin/district') || Request::is('admin/district/create') || Request::is('admin/district/*') ? 'class="active"' : '') !!}>
+    <a href="#">
+        <i class="livicon" data-name="list" data-size="18" data-c="#F89A14" data-hc="#F89A14"
+           data-loop="true"></i>
+        <span class="title">District</span>
+        <span class="fa arrow"></span>
+    </a>
+    <ul class="sub-menu">
+        <li {!! (Request::is('admin/district') ? 'class="active" id="active"' : '') !!}>
+            <a href="{{ URL::to('admin/district') }}">
+                <i class="fa fa-angle-double-right"></i>
+                District
+            </a>
+        </li>
+        <li {!! (Request::is('admin/district/create') ? 'class="active" id="active"' : '') !!}>
+            <a href="{{ URL::to('admin/district/create') }}">
+                <i class="fa fa-angle-double-right"></i>
+                Add District
+            </a>
+        </li>
+    </ul>
+</li>
+
+<li {!! (Request::is('admin/classroom') || Request::is('admin/classroom/create') || Request::is('admin/classroom/*') || Request::is('admin/csv_update') ? 'class="active"' : '') !!}>
+    <a href="#">
+        <i class="livicon" data-name="thumbnails-small" data-size="18" data-c="#EF6F6C" data-hc="#EF6F6C"
            data-loop="true"></i>
         <span class="title">Classroom</span>
         <span class="fa arrow"></span>
@@ -40,11 +107,17 @@
                 Add New Classroom
             </a>
         </li>
+        <li {!! (Request::is('admin/csv_update') ? 'class="active" id="active"' : '') !!}>
+            <a href="{{ URL::to('admin/csv_update') }}">
+                <i class="fa fa-angle-double-right"></i>
+                CSV Classroom Update 
+            </a>
+        </li>
     </ul>
 </li>
 <li {!! (Request::is('admin/courses') || Request::is('admin/courses/create') || Request::is('admin/courses/*') ? 'class="active"' : '') !!}>
     <a href="#">
-        <i class="livicon" data-name="archive-extract" data-size="18" data-c="#F89A14" data-hc="#F89A14"
+        <i class="livicon" data-name="archive-extract" data-size="18" data-c="#418BCA" data-hc="#418BCA"
            data-loop="true"></i>
         <span class="title">Courses</span>
         <span class="fa arrow"></span>
@@ -66,7 +139,7 @@
 </li>
 <li {!! (Request::is('admin/chapters') || Request::is('admin/chapters/create') || Request::is('admin/chapters/*') ? 'class="active"' : '') !!}>
     <a href="#">
-        <i class="livicon" data-name="address-book" data-size="18" data-c="#EF6F6C" data-hc="#EF6F6C"
+        <i class="livicon" data-name="address-book" data-size="18" data-c="#6CC66C" data-hc="#6CC66C"
            data-loop="true"></i>
         <span class="title">Chapters</span>
         <span class="fa arrow"></span>
@@ -88,29 +161,29 @@
 </li>
 <li {!! (Request::is('admin/lession') || Request::is('admin/lession/create') || Request::is('admin/lession/*') ? 'class="active"' : '') !!}>
     <a href="#">
-        <i class="livicon" data-name="doc-portrait" data-size="18" data-c="#418BCA" data-hc="#418BCA"
+        <i class="livicon" data-name="doc-portrait" data-size="18" data-c="#A9B6BC" data-hc="#A9B6BC"
            data-loop="true"></i>
-        <span class="title">Lessions</span>
+        <span class="title">Lessons</span>
         <span class="fa arrow"></span>
     </a>
     <ul class="sub-menu">
         <li {!! (Request::is('admin/lession') ? 'class="active" id="active"' : '') !!}>
             <a href="{{ URL::to('admin/lession') }}">
                 <i class="fa fa-angle-double-right"></i>
-                Lessions
+                Lessons
             </a>
         </li>
         <li {!! (Request::is('admin/lession/create') ? 'class="active" id="active"' : '') !!}>
             <a href="{{ URL::to('admin/lession/create') }}">
                 <i class="fa fa-angle-double-right"></i>
-                Add New Lession
+                Add New Lesson
             </a>
         </li>
     </ul>
 </li>
 <li {!! (Request::is('admin/questions') || Request::is('admin/questions/create') || Request::is('admin/questions/*') ? 'class="active"' : '') !!}>
     <a href="#">
-        <i class="livicon" data-name="hammer" data-size="18" data-c="#6CC66C" data-hc="#6CC66C"
+        <i class="livicon" data-name="hammer" data-size="18" data-c="#67C5DF" data-hc="#67C5DF"
            data-loop="true"></i>
         <span class="title">Questions</span>
         <span class="fa arrow"></span>
@@ -130,16 +203,23 @@
         </li>
     </ul>
 </li>
-<li {!! (Request::is('admin/courses-to-teacher') ? 'class="active"' : '') !!}>
+<!--<li {!! (Request::is('admin/courses-to-teacher') ? 'class="active"' : '') !!}>
     <a href="{{ route('courses_to_teacher') }}">
         <i class="livicon" data-name="angle-double-right" data-size="18" data-c="#A9B6BC" data-hc="#A9B6BC"
            data-loop="true"></i>
         <span class="title">Courses To Teacher</span>
     </a>
+</li>-->
+<li {!! (Request::is('admin/unlock_question') ? 'class="active"' : '') !!}>
+    <a href="{{ URL::to('admin/unlock_question') }}">
+        <i class="livicon" data-name="biohazard" data-size="18" data-c="#F89A14" data-hc="#F89A14"
+           data-loop="true"></i>
+        <span class="title">Unlock Question</span>
+    </a>
 </li>
 <li {!! (Request::is('admin/contact') ? 'class="active"' : '') !!}>
     <a href="{{ URL::to('admin/contact') }}">
-        <i class="livicon" data-name="mail" data-size="18" data-c="#67C5DF" data-hc="#67C5DF"
+        <i class="livicon" data-name="mail" data-size="18" data-c="#F89A14" data-hc="#F89A14"
            data-loop="true"></i>
         <span class="title">Contact</span>
     </a>

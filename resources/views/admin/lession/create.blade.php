@@ -2,7 +2,7 @@
 
 {{-- Page title --}}
 @section('title')
-    Add Lession
+    Add Lesson
     @parent
     @stop
 
@@ -16,7 +16,7 @@
 {{-- Page content --}}
 @section('content')
     <section class="content-header">
-        <h1>Add New Lession</h1>
+        <h1>Add New Lesson</h1>
         <ol class="breadcrumb">
             <li>
                 <a href="{{ route('dashboard') }}">
@@ -24,8 +24,8 @@
                     Dashboard
                 </a>
             </li>
-            <li>Lessions</li>
-            <li class="active">Add New Lession</li>
+            <li>Lessons</li>
+            <li class="active">Add New Lesson</li>
         </ol>
     </section>
     <section class="content">
@@ -35,7 +35,7 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">
                             <i class="livicon" data-name="user-add" data-size="18" data-c="#fff" data-hc="#fff" data-loop="true"></i>
-                            Add New Lession
+                            Add New Lesson
                         </h3>
                         <span class="pull-right clickable">
                             <i class="glyphicon glyphicon-chevron-up"></i>
@@ -83,7 +83,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">Lession Name: *</label>
+                                <label for="name" class="col-sm-2 control-label">Lesson Name: *</label>
                                 <div class="col-sm-10">
                                     <input id="name" name="name" type="text"
                                            placeholder="Name" class="form-control required"
@@ -134,7 +134,7 @@
                                         Cancel
                                     </a>
                                     <button type="submit" class="btn btn-success">
-                                        Add Lession
+                                        Add Lesson
                                     </button>
                                 </div>
                             </div>
